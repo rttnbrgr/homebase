@@ -12,7 +12,7 @@ type Props = {
   allPosts: Post[];
 };
 
-const Index = ({ allPosts }: Props) => {
+const Blog = ({ allPosts }: Props) => {
   const heroPost = allPosts[0];
   const morePosts = allPosts.slice(1);
   return (
@@ -40,7 +40,7 @@ const Index = ({ allPosts }: Props) => {
   );
 };
 
-export default Index;
+export default Blog;
 
 export const getStaticProps = async () => {
   const allPosts = getAllPosts([
