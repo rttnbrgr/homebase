@@ -7,7 +7,7 @@ type Props = {
 
 const MoreStories = ({ posts }: Props) => {
   return (
-    <section className="max-w-2xl mx-auto bg-yellow-200">
+    <section className="max-w-2xl mx-auto">
       <h2 className="mb-8 text-5xl md:text-7xl font-bold tracking-tighter leading-tight">
         Posts
       </h2>
