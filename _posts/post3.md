@@ -2,10 +2,6 @@
 title: "~/ sweet home"
 excerpt: "My current homepage is housed in a humble repo that is using nothing more than parcel, vanilla markup, and vanilla css. I made it over a weekend. I wanted something lean. Something minimal."
 date: "2022-01-08"
-date: "2022-01-01"
-author:
-  name: JJ Kasper
-  picture: "/assets/blog/authors/jj.jpeg"
 ogImage:
   url: "/assets/blog/dynamic-routing/cover.jpg"
 ---

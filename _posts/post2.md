@@ -1,11 +1,7 @@
 ---
 title: "npm init new-thing"
 excerpt: "I made mention of the next most important thing. Inside that was a list of steps to accomplish said most important thing. One of those was 'setup new project'. That one line has a lot of layered decision making in it."
-coverImage: "/assets/blog/dynamic-routing/cover.jpg"
 date: "2022-01-01"
-author:
-  name: JJ Kasper
-  picture: "/assets/blog/authors/jj.jpeg"
 ogImage:
   url: "/assets/blog/dynamic-routing/cover.jpg"
 ---

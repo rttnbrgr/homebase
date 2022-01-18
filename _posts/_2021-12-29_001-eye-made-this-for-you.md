@@ -5,11 +5,7 @@ altTitles: [
 'Journey of a thousand miles... something, somethig... and the first step'
 ]
 excerpt: "I'm not entirely sure what I'm doing. I will try to avoid re-stating that."
-coverImage: '/assets/blog/dynamic-routing/cover.jpg'
 date: '2021-12-31'
-author:
-  name: JJ Kasper
-  picture: '/assets/blog/authors/jj.jpeg'
 ogImage:
   url: '/assets/blog/dynamic-routing/cover.jpg'
 ---
