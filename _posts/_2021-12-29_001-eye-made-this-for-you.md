@@ -1,10 +1,10 @@
 ---
-title: 'Eye made this for you.'
+title: 'eye made this for you.'
 altTitles: [
 'How eye learned to stop worrying about all the unfinished work and make words come out of my fingers.',
 'Journey of a thousand miles... something, somethig... and the first step'
 ]
-excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.'
+excerpt: "I'm not entirely sure what I'm doing. I will try to avoid re-stating that."
 coverImage: '/assets/blog/dynamic-routing/cover.jpg'
 date: '2021-12-31'
 author:
