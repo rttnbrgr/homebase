@@ -6,46 +6,51 @@ ogImage:
   url: "/assets/blog/dynamic-routing/cover.jpg"
 ---
 
-# Home sweet home
-
 The next most important thing for my new homebase, is, well, the homepage. Below is the tale of how it came to be.
 
 ## Wants vs Needs
 
-My current homepage is housed in a humble repo that is using nothing more than parcel, vanilla markup, and vanilla css.
+My current homepage is housed in a [humble repo](https://github.com/rttnbrgr/rttnbrgr.com) that is using nothing more than parcel, vanilla markup, and vanilla css.
 
 I made it over a weekend.
 
 I wanted something lean. Something minimal.
 
 I also _wanted_ to use an SVG logo, but Parcel was having a hell of a time with it.
+
 I _wanted_ to write all the words as markdown and convert it so that I could manage that set of data separate from the rest.
-I _wanted_ to have a really simple admin UI to manage the links at the bottom of the page. I _wanted_ to convert the design into a UI kit in Sketch so I could build out the other pages in a cohesive style.
 
-Despite my penchant for getting distractible and over indexing on things that are of deep interest to me, but not to the final product, I was able to finish this.
+I _wanted_ to have a really simple admin UI to manage the links at the bottom of the page.
 
-Why?
+I _wanted_ to convert the design into a UI kit in Sketch so I could build out the other pages in a cohesive style.
+
+Despite my penchant for being distractible and over indexing on things that are of deep interest to me, but not the final product, I was able to finish this.
+
+**Why?**
 
 Because I had just lost my job.
 
 And I **_needed_** a new one.
 
-And to do that, I **needed** a place to send people.
+And to do that, I **_needed_** a place to send people.
 
 So, I wrote a draft of copy and a draft of styles, and published it.
 
 I've tweaked it. A bit. Since then. But it has mostly worked.
 
-And with that in mind, I'm not gonna touch this. Well, not in _spirit_.
+With that in mind, I'm not gonna touch this. Well, not in _spirit_.
 
 I still want all those things above, or the new version of them.
 
 I _want_ to convert it to Chakra.
-I still _want_ the markdown and the mini-admin to manage my links.
-I _want_ to re-write some of the copy.
-And I _want_ to refactor the base styles so they are inline w/ the blog and rest of the site.
 
-But i **NEED** a homepage for my new project.
+I still _want_ the markdown and the mini-admin to manage my links.
+
+I _want_ to re-write the copy.
+
+And I _want_ to refactor the styles so they are inline w/ the rest of the site.
+
+But I **_NEED_** a homepage for my new project.
 
 So that's what I'm gonna do.
 
