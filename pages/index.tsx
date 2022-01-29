@@ -69,7 +69,7 @@ const Index = ({}: Props) => {
             <ul className={styles.list}>
               <h1 className={styles["text--header"]}>Links</h1>
               <li className={styles["list-item"]}>
-                <a className={styles.link} href="http://www.rottenburger.com/">
+                <a className={styles.link} href="https://www.rottenburger.com/">
                   Portfolio
                 </a>
               </li>
@@ -79,7 +79,7 @@ const Index = ({}: Props) => {
                 </a>
               </li>
               <li className={styles["list-item"]}>
-                <a className={styles.link} href="http://github.com/rttnbrgr">
+                <a className={styles.link} href="https://github.com/rttnbrgr">
                   Github
                 </a>
               </li>
