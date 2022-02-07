@@ -1,7 +1,8 @@
 // 1. Import `extendTheme`
 import { extendTheme, ThemeConfig, TextProps } from "@chakra-ui/react";
-import { createBreakpoints, mode } from "@chakra-ui/theme-tools";
+import { createBreakpoints, mode, Styles } from "@chakra-ui/theme-tools";
 import Review from "./components/reviews/ReviewStyle";
+import Button from "./components/reviews/ButtonStyle";
 
 const config: ThemeConfig = {
   initialColorMode: "light",
@@ -29,23 +30,25 @@ const baseTextStyles: TextProps = {
   fontWeight: 700
 };
 
+const styles: Styles = {
+  global: props => ({
+    body: {
+      fontFamily: "default",
+      bg: mode("bg", "onBg")(props),
+      color: mode("onBg", "bg")(props),
+      borderColor: mode("onBg", "bg")(props)
+    },
+    "h1, h2, h3, h4": {
+      ...baseTextStyles
+    }
+  })
+};
+
 // 2. Call `extendTheme` and pass your custom values
 const theme = extendTheme({
   config,
   breakpoints,
-  styles: {
-    global: props => ({
-      body: {
-        fontFamily: "default",
-        bg: mode("bg", "onBg")(props),
-        color: mode("onBg", "bg")(props),
-        borderColor: mode("onBg", "bg")(props)
-      },
-      "h1, h2, h3, h4": {
-        ...baseTextStyles
-      }
-    })
-  },
+  styles,
   colors: {
     bg: "white",
     onBg: "black"
@@ -102,38 +105,7 @@ const theme = extendTheme({
     }
   },
   components: {
-    Button: {
-      variants: {
-        reviewOutline: props => ({
-          borderWidth: "2px",
-          borderStyle: "solid",
-          borderColor: mode("onBg", "bg")(props),
-          borderRadius: "none",
-          color: mode("onBg", "bg")(props),
-          py: 0,
-          px: 2,
-
-          height: "2em",
-          // textStyle avatarBox + updates + padding
-          fontFamily: fonts.default,
-          fontWeight: 700,
-          fontSize: "xs",
-          lineHeight: "1",
-          textTransform: "uppercase",
-          textDecoration: "none",
-
-          _hover: {
-            textDecoration: "none"
-          },
-          _focus: {
-            outline: "none"
-          }
-        })
-      },
-      defaultProps: {
-        variant: "reviewOutline"
-      }
-    },
+    Button,
     Link: {
       variants: {
         reviewButton: {
