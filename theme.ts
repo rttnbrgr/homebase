@@ -122,6 +122,9 @@ const theme = extendTheme({
           textTransform: "uppercase",
           textDecoration: "none",
 
+          _hover: {
+            textDecoration: "none"
+          },
           _focus: {
             outline: "none"
           }
@@ -129,6 +132,17 @@ const theme = extendTheme({
       },
       defaultProps: {
         variant: "reviewOutline"
+      }
+    },
+    Link: {
+      variants: {
+        reviewButton: {
+          textDecoration: "none",
+          lineHeight: 1,
+          _hover: {
+            textDecoration: "none"
+          }
+        }
       }
     },
     Review,

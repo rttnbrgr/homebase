@@ -5,7 +5,9 @@ import {
   Text,
   Image,
   useMultiStyleConfig,
-  Flex
+  Flex,
+  useColorMode,
+  Button
 } from "@chakra-ui/react";
 import { Review } from "../../lib/reviews";
 
