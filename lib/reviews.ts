@@ -136,11 +136,11 @@ export const reviewChastine = {
     "I found him to be a very easy-going coworker, clear communicator, collaborative, logical, easy to work with, and all around friendly and welcoming face in the office. Really enjoyed working on shared initiatives with him."
 };
 
-type Review = {
+export type Review = {
   name: string;
   title: string;
   avatar: StaticImageData;
-  fullText: string;
+  fullText?: string;
   reviewText: string;
 };
 
