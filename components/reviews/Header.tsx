@@ -12,7 +12,7 @@ import {
 const headerStyles: BoxProps = {
   justifyContent: {
     base: "space-between",
-    sm: "center"
+    md: "center"
   },
   alignItems: "center",
   px: 4,
