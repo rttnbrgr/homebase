@@ -1,6 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/homepage.module.css";
 import Meta from "../components/meta";
+import Link from "next/link";
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -74,9 +75,14 @@ const Index = ({}: Props) => {
                 </a>
               </li>
               <li className={styles["list-item"]}>
-                <a className={styles.link} href="https://review.rttnbrgr.com/">
-                  Reviews
-                </a>
+                <Link href="/blog">
+                  <a className={styles.link}>Blog</a>
+                </Link>
+              </li>
+              <li className={styles["list-item"]}>
+                <Link href="/reviews">
+                  <a className={styles.link}>Reviews</a>
+                </Link>
               </li>
               <li className={styles["list-item"]}>
                 <a className={styles.link} href="https://github.com/rttnbrgr">
