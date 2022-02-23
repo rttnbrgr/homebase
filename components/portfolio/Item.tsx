@@ -1,6 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import { AspectRatio, Box, BoxProps } from "@chakra-ui/react";
 import NextLink, { LinkProps } from "next/link";
+import PortfolioImage, { PortfolioImageProps } from "./Image";
 
 const portfolioGridItemStyles: BoxProps = {
   _hover: {
@@ -9,14 +10,30 @@ const portfolioGridItemStyles: BoxProps = {
   }
 };
 
-type Props = LinkProps & BoxProps & {};
+type Props = LinkProps & BoxProps & PortfolioImageProps & {};
 
-const PortfolioGridItem = ({ href, ...props }: Props) => {
+const PortfolioGridItem = ({
+  href,
+  src,
+  loader,
+  alt,
+  width,
+  height,
+  ...props
+}: Props) => {
+  const portfolioImageProps = {
+    src,
+    loader,
+    alt,
+    width,
+    height
+  };
   return (
     <NextLink href={href}>
-      <AspectRatio ratio={16 / 9}>
-        <Box {...portfolioGridItemStyles} {...props} />
-      </AspectRatio>
+      {/* just the hover styles */}
+      <Box {...portfolioGridItemStyles} {...props}>
+        <PortfolioImage {...portfolioImageProps} />
+      </Box>
     </NextLink>
   );
 };
@@ -25,4 +42,4 @@ PortfolioGridItem.defaultProps = {
   href: "/portfolio/1"
 };
 
-export default PortfolioGridItem;
+export default memo(PortfolioGridItem);

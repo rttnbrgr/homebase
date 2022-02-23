@@ -1,13 +1,10 @@
 import React from "react";
-import Head from "next/head";
-import Meta from "../../components/meta";
-import { AspectRatio, Box, BoxProps, Text } from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
 import {
-  Layout,
-  Grid,
+  Layout as PortfolioLayout,
+  Grid as PortfolioGrid,
   Item as PortfolioGridItem
 } from "../../components/portfolio";
-import { Url } from "url";
 
 const mockPortfolio = [
   "red.100",
@@ -30,32 +27,18 @@ const mockPortfolio = [
   "teal.900"
 ];
 
-// type Props = {
-//   title: string;
-//   children?: React.ReactNode;
-// };
-
-// const PorfolioHeader = ({}: Props) => (
-//   return (
-//     <>
-//     <Text textStyle="portfolio.header">Portfolio</Text>
-//     {false && 'bar'}
-//     </>
-//   )
-// )
-
 type PortfolioProps = {};
 
 function Portfolio({}: PortfolioProps) {
   return (
-    <Layout>
+    <PortfolioLayout>
       <Text textStyle="portfolio.header">Portfolio</Text>
-      <Grid>
+      <PortfolioGrid>
         {mockPortfolio.map((x, i) => (
           <PortfolioGridItem key={i} bg={x} />
         ))}
-      </Grid>
-    </Layout>
+      </PortfolioGrid>
+    </PortfolioLayout>
   );
 }
 

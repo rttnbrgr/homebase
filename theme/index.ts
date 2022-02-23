@@ -122,10 +122,10 @@ const theme = extendTheme({
         },
         lineHeight: "1.25",
         maxW: {
-          base: "400px",
-          sm: "400px",
-          md: "400px",
-          lg: "400px"
+          // base: "400px",
+          // sm: "400px",
+          // md: "400px",
+          // lg: "400px"
         }
       }
     }
