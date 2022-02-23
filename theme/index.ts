@@ -102,6 +102,32 @@ const theme = extendTheme({
         fontSize: "1em",
         lineHeight: "1.25"
       }
+    },
+    portfolio: {
+      header: {
+        ...baseTextStyles,
+        fontSize: { base: "1.5em", md: "4em" },
+        fontWeight: 700,
+        lineHeight: "1.333",
+        textTransform: "uppercase",
+        letterSpacing: "-0.5px"
+      },
+      text: {
+        ...baseTextStyles,
+        fontSize: {
+          base: "1em",
+          sm: "1em",
+          md: "1em",
+          lg: "1em"
+        },
+        lineHeight: "1.25",
+        maxW: {
+          base: "400px",
+          sm: "400px",
+          md: "400px",
+          lg: "400px"
+        }
+      }
     }
   },
   components: {
