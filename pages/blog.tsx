@@ -8,6 +8,7 @@ import Head from "next/head";
 import { CMS_NAME } from "../lib/constants";
 import Post from "../types/post";
 import Header from "../components/header";
+import Link from "next/link";
 
 type Props = {
   allPosts: Post[];
@@ -24,6 +25,7 @@ const Blog = ({ allPosts }: Props) => {
         </Head>
         <Container>
           <Header />
+          <Link href="/portfolio">Portfolio</Link>
           {allPosts.length > 0 && <MoreStories posts={allPosts} />}
         </Container>
       </Layout>

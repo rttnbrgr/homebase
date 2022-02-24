@@ -5,6 +5,7 @@ import {
   Grid as PortfolioGrid,
   Item as PortfolioGridItem
 } from "../../components/portfolio";
+import Link from "next/link";
 
 const mockPortfolio = [
   "red.100",
@@ -33,6 +34,9 @@ function Portfolio({}: PortfolioProps) {
   return (
     <PortfolioLayout>
       <Text textStyle="portfolio.header">Portfolio</Text>
+      <Text textStyle="portfolio.header">
+        <Link href="/blog">Blog</Link>
+      </Text>
       <PortfolioGrid>
         {mockPortfolio.map((x, i) => (
           <PortfolioGridItem key={i} bg={x} />
