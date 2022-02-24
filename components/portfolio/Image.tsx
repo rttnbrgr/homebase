@@ -1,12 +1,13 @@
 import React from "react";
 import { AspectRatio, BoxProps, Text } from "@chakra-ui/react";
 import NextImage, { ImageProps } from "next/image";
-import photo from "../../public/assets/portfolio/sample.jpeg";
 
 export type PortfolioImageProps = Omit<ImageProps, "src"> & {
   src?: ImageProps["src"];
   bg?: BoxProps["bg"];
 };
+
+const ratioOfThumbs = 4 / 3;
 
 const PortfolioImage = ({
   src,
@@ -17,7 +18,7 @@ const PortfolioImage = ({
   bg
 }: PortfolioImageProps) => {
   return (
-    <AspectRatio ratio={16 / 9} bg={src ? "" : bg}>
+    <AspectRatio ratio={ratioOfThumbs} bg={src ? "" : bg}>
       {src ? (
         <NextImage
           loader={loader}
