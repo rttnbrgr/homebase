@@ -29,7 +29,7 @@ const PortfolioImage = ({
           layout="fill"
         />
       ) : (
-        <Text>No IMG</Text>
+        <Text>{alt ? alt : "No IMG"}</Text>
       )}
     </AspectRatio>
   );
