@@ -22,20 +22,9 @@ function Portfolio({ projects }: PortfolioProps) {
         <Link href="/blog">Blog</Link>
       </Text>
       <PortfolioGrid>
-        {projects.map((project, j) => {
-          const { title, assetDir, slug } = project;
-          const assetTest = `${assetDir}/thumb.jpg`;
-          const projectSlug = `/portfolio/${slug}`;
-
-          return (
-            <PortfolioGridItem
-              key={j}
-              alt={title}
-              src={assetTest}
-              href={projectSlug}
-            />
-          );
-        })}
+        {projects.map(({ title, slug, thumb }, j) => (
+          <PortfolioGridItem key={j} alt={title} src={thumb} slug={slug} />
+        ))}
       </PortfolioGrid>
     </PortfolioLayout>
   );
@@ -47,8 +36,8 @@ export const getStaticProps = async () => {
   const projects = getAllPortfolioProjects([
     "title",
     "slug",
-    "assetDir",
-    "thumb"
+    "thumb",
+    "assetDir"
   ]);
   return {
     props: { projects }
