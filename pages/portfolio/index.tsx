@@ -23,10 +23,18 @@ function Portfolio({ projects }: PortfolioProps) {
       </Text>
       <PortfolioGrid>
         {projects.map((project, j) => {
-          const { title, assetDir } = project;
+          const { title, assetDir, slug } = project;
           const assetTest = `${assetDir}/thumb.jpg`;
+          const projectSlug = `/portfolio/${slug}`;
 
-          return <PortfolioGridItem key={j} alt={title} src={assetTest} />;
+          return (
+            <PortfolioGridItem
+              key={j}
+              alt={title}
+              src={assetTest}
+              href={projectSlug}
+            />
+          );
         })}
       </PortfolioGrid>
     </PortfolioLayout>

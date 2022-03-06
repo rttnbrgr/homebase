@@ -10,6 +10,26 @@ import { responsivePad } from "../../components/portfolio/utils";
 import NextImage, { ImageProps } from "next/image";
 import photo from "../../public/assets/portfolio/sample.jpeg";
 import { SimpleGrid, SimpleGridProps, BoxProps } from "@chakra-ui/react";
+import {
+  getPortfolioProjectBySlug,
+  getAllPortfolioProjects
+} from "../../lib/api";
+import markdownToHtml from "../../lib/markdownToHtml";
+
+//
+import markdownStyles from "./markdown-styles.module.css";
+import { getProjectImagesByPath } from "../../lib/api";
+
+type Props = {
+  content: string;
+};
+
+const ProjectBody = ({ content }: Props) => {
+  return <div dangerouslySetInnerHTML={{ __html: content }} />;
+};
+
+// export default ProjectBody;
+//
 
 const mockPortfolio = ["orange.300", "teal.500", "orange.500", "orange.700"];
 
@@ -41,11 +61,15 @@ const nestedGridStyles: SimpleGridProps = {
 
 type PortfolioProjectProps = {
   title: string;
+  project: any;
 };
 
-function PortfolioProject({ title }: PortfolioProjectProps) {
+function PortfolioProject({ title, project }: PortfolioProjectProps) {
+  console.log("🧳🧳🧳🧳🧳🧳🧳🧳🧳🧳🧳🧳🧳🧳🧳");
+  console.log("project?", project);
+  console.log("project.assets?", project.assets);
   return (
-    <Layout title={title}>
+    <Layout title={project.title ? project.title : "title"}>
       <Grid {...parentGridStyles}>
         {/* Banner Image */}
         <GridItem colStart={{ lg: 1 }} colSpan={{ lg: 2 }}>
@@ -70,7 +94,7 @@ function PortfolioProject({ title }: PortfolioProjectProps) {
           colStart={{ lg: 3 }}
           colSpan={{ lg: 2 }}
         >
-          <Text textStyle="portfolio.header">{title}</Text>
+          <Text textStyle="portfolio.header">{project.title}</Text>
           <Text textStyle="portfolio.text">
             I helped rebuild the entire Sprinklr Display platform from the
             ground up. The platform is used for both command centers (internal
@@ -87,6 +111,8 @@ function PortfolioProject({ title }: PortfolioProjectProps) {
             social post data. Our visualizations helped showcase the content and
             surface insightful engagement metrics and trends.
           </Text>
+          <hr />
+          <ProjectBody content={project.content} />
         </GridItem>
         {/* Images */}
         <GridItem colSpan={{ lg: 2 }} rowStart={{ lg: 2 }}>
@@ -95,6 +121,8 @@ function PortfolioProject({ title }: PortfolioProjectProps) {
             {mockPortfolio.map((x, i) => (
               <PortfolioImage key={i} bg={x} />
             ))}
+            {project.assets &&
+              project.assets.map((x, i) => <PortfolioImage key={i} src={x} />)}
           </SimpleGrid>
         </GridItem>
       </Grid>
@@ -102,23 +130,88 @@ function PortfolioProject({ title }: PortfolioProjectProps) {
   );
 }
 
-PortfolioProject.defaultProps = {
-  title: "Portfolio Item"
-};
+// PortfolioProject.defaultProps = {
+//   title: "Portfolio Item"
+// };
 
 export default PortfolioProject;
 
-// export async function getStaticProps(context) {
-export async function getStaticProps() {
-  // console.log("context", context);
+type Params = {
+  params: {
+    slug: string;
+  };
+};
+
+// empty
+// export async function getStaticProps() {
+//   return {
+//     props: {}
+//   };
+// }
+
+export async function getStaticProps({ params }: Params) {
+  // console.log("🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨");
+
+  getProjectImagesByPath("foo");
+
+  // console.log("👺👺👺👺👺👺👺👺👺👺");
+
+  // console.log("params", params);
+  const project = getPortfolioProjectBySlug(params.slug, [
+    "title",
+    "slug",
+    "assetDir",
+    "thumb",
+    "content",
+    "assets"
+  ]);
+
+  // console.log("project", project);
+
+  const content = await markdownToHtml(project.content || "");
+  // console.log("content", content);
+
   return {
-    props: {} // will be passed to the page component as props
+    props: {
+      project: {
+        ...project,
+        content
+      }
+    }
   };
 }
 
-export const getStaticPaths = async () => {
+// export const getStaticPaths = async () => {
+//   return {
+//     paths: ["/portfolio/1"],
+//     fallback: false
+//   };
+// };
+
+export async function getStaticPaths() {
+  const projects = getAllPortfolioProjects(["slug"]);
   return {
-    paths: ["/portfolio/1"],
+    // props: { projects }
+    paths: projects.map(project => {
+      return {
+        params: {
+          slug: project.slug
+        }
+      };
+    }),
     fallback: false
   };
-};
+
+  // const posts = getAllPosts(["slug"]);
+
+  // return {
+  //   paths: posts.map(post => {
+  //     return {
+  //       params: {
+  //         slug: post.slug
+  //       }
+  //     };
+  //   }),
+  //   fallback: false
+  // };
+}
