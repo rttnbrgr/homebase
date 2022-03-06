@@ -4,7 +4,8 @@ import NextLink from "next/link";
 import {
   Layout,
   Grid as PortfolioGrid,
-  Image as PortfolioImage
+  Image as PortfolioImage,
+  Body as PortfolioBody
 } from "../../components/portfolio";
 import { responsivePad } from "../../components/portfolio/utils";
 import NextImage, { ImageProps } from "next/image";
@@ -19,17 +20,6 @@ import markdownToHtml from "../../lib/markdownToHtml";
 //
 import markdownStyles from "./markdown-styles.module.css";
 import { getProjectImagesByPath } from "../../lib/api";
-
-type Props = {
-  content: string;
-};
-
-const ProjectBody = ({ content }: Props) => {
-  return <div dangerouslySetInnerHTML={{ __html: content }} />;
-};
-
-// export default ProjectBody;
-//
 
 const mockPortfolio = ["orange.300", "teal.500", "orange.500", "orange.700"];
 
@@ -94,25 +84,7 @@ function PortfolioProject({ title, project }: PortfolioProjectProps) {
           colStart={{ lg: 3 }}
           colSpan={{ lg: 2 }}
         >
-          <Text textStyle="portfolio.header">{project.title}</Text>
-          <Text textStyle="portfolio.text">
-            I helped rebuild the entire Sprinklr Display platform from the
-            ground up. The platform is used for both command centers (internal
-            facing) and social displays (think IG posts on the jumbotron at your
-            favorite sporting event).
-          </Text>
-          <Text textStyle="portfolio.text">
-            I helped architect the entire frontend in modern React, Typescript,
-            and Mobx. I also built a number of our data visualization modules
-            which were powered by D3.{" "}
-          </Text>
-          <Text textStyle="portfolio.text">
-            I design and implemented a variety of visualizations based around
-            social post data. Our visualizations helped showcase the content and
-            surface insightful engagement metrics and trends.
-          </Text>
-          <hr />
-          <ProjectBody content={project.content} />
+          <PortfolioBody content={project.content} title={project.title} />
         </GridItem>
         {/* Images */}
         <GridItem colSpan={{ lg: 2 }} rowStart={{ lg: 2 }}>
