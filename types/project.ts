@@ -10,6 +10,7 @@ export type Project = {
   // };
   content: string;
   assetDir: string;
+  thumb?: string;
 };
 
 // export default PostType;
