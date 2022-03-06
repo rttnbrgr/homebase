@@ -5,7 +5,8 @@ import {
   Layout,
   Grid as PortfolioGrid,
   Image as PortfolioImage,
-  Body as PortfolioBody
+  Body as PortfolioBody,
+  BackLink as PortfolioBackLink
 } from "../../components/portfolio";
 import { responsivePad } from "../../components/portfolio/utils";
 import NextImage, { ImageProps } from "next/image";
@@ -65,17 +66,13 @@ function PortfolioProject({ title, project }: PortfolioProjectProps) {
         <GridItem colStart={{ lg: 1 }} colSpan={{ lg: 2 }}>
           <PortfolioImage src={photo} alt="Picture of the author" />
         </GridItem>
-        {/* Return Link*/}
+        {/* Back Link*/}
         <GridItem
           display={{ base: "flex" }}
           flexDirection="column"
           justifyContent="flex-end"
         >
-          <NextLink href="/portfolio">
-            <Box _hover={{ cursor: "pointer" }}>
-              <Text textStyle="portfolio.header">←</Text>
-            </Box>
-          </NextLink>
+          <PortfolioBackLink />
         </GridItem>
         {/* Project Body */}
         <GridItem
