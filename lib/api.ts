@@ -51,8 +51,10 @@ export function getAllPosts(fields: string[] = []) {
   return posts;
 }
 
+// returns the full path to our _portfolio folder on the system
 const portfolioProjectsDirectory = join(process.cwd(), "_portfolio");
 
+// returns the array of project filesnames; including extension
 export function getPortfolioProjectSlugs() {
   return fs.readdirSync(portfolioProjectsDirectory);
 }
@@ -122,16 +124,38 @@ type projectFields =
   | "content"
   | "assets";
 
+// what are all the valid fields
+
 export function getPortfolioProjectBySlug(slug: string, fields: string[] = []) {
-  // console.log("🚨 getPortfolioProjectBySlug");
+  console.log("🚨 getPortfolioProjectBySlug: slug", slug);
+  // strip the `.md`
   const realSlug = slug.replace(/\.md$/, "");
+  // get the unix path + add back teh md
   const fullPath = join(portfolioProjectsDirectory, `${realSlug}.md`);
-  const assetPath = join("/assets/portfolio/", `${realSlug}`);
+  // get the md file
   const fileContents = fs.readFileSync(fullPath, "utf8");
+  // parse the md file
   const { data, content } = matter(fileContents);
 
-  // console.log("data", data);
-  // console.log("content", content);
+  /**
+   * Prepare the date string for sort
+   */
+  let sortDateString = "";
+
+  // Transform from date => String
+  if (typeof data.dateSort === "object") {
+    sortDateString = data.dateSort.toISOString().split("T")[0];
+  } else {
+    console.log("🚨 this shouldnt happen");
+    sortDateString = data.dateSort;
+  }
+
+  const assetPath = join("/assets/portfolio/", `${realSlug}`);
+  console.log("assetPath", assetPath);
+  const thumbPath = join(assetPath, `/thumb.jpg`);
+  console.log("thumbPath", thumbPath);
+
+  // Prepare the types
   interface itemsObject {
     [key: string]: string;
   }
@@ -139,34 +163,54 @@ export function getPortfolioProjectBySlug(slug: string, fields: string[] = []) {
     assets?: string[];
   }
 
+  // Wierd union since its alls trings except the array of assets
   type Item = itemsObject & assetObject;
 
-  const items: Item = {};
+  const items: Item = {
+    // always return sort date
+    dateSort: sortDateString
+  };
+
+  // prepare asset dir
+  // prepare portfolio link
+  // plus slug
+  //  prepare thumb
+  // prepare project slug/link
 
   // Ensure only the minimal needed data is exposed
   fields.forEach(field => {
     if (field === "slug") {
+      console.log("in slug", field);
       items[field] = realSlug;
     }
     if (field === "content") {
+      console.log("in content", field);
       items[field] = content;
     }
+    // Do I need this?
     if (field === "assetDir") {
+      console.log("in assetDir", field);
       items[field] = assetPath;
     }
-    if (field === "assets") {
-      // console.log("asking for assets");
-      // const foo = getProjectImagesByPath(slug);
-      // console.log("xxx restult of getProjectImagesByPath xxx", foo);
-      // items[field] = foo;
-
-      // items.assets = foo;
-      // items[field] = "foo";
-      items[field] = getProjectImagesByPath(slug);
+    if (field === "thumb") {
+      console.log("in thumb", field);
+      items[field] = thumbPath;
     }
+
+    // if (field === "assets") {
+    //   // console.log("asking for assets");
+    //   // const foo = getProjectImagesByPath(slug);
+    //   // console.log("xxx restult of getProjectImagesByPath xxx", foo);
+    //   // items[field] = foo;
+
+    //   // items.assets = foo;
+    //   items[field] = "foo";
+    //   // items[field] = getProjectImagesByPath(slug);
+    // }
 
     // the catch all
     if (typeof data[field] !== "undefined") {
+      console.log("fields in last catch: ", field);
       items[field] = data[field];
     }
   });
@@ -175,15 +219,16 @@ export function getPortfolioProjectBySlug(slug: string, fields: string[] = []) {
 }
 
 export function getAllPortfolioProjects(fields: string[] = []) {
-  // console.log("📢 getAllPortfolioProjects");
-
+  // Get all the slugs
   const slugs = getPortfolioProjectSlugs();
-  // console.log("slugs", slugs);
+  console.log("slugs", slugs);
 
   const portfolioProjects = slugs
     .map(slug => getPortfolioProjectBySlug(slug, fields))
     // sort posts by date in descending order
-    .sort((post1, post2) => (post1.dateSort > post2.dateSort ? -1 : 1));
+    .sort((post1, post2) => {
+      return post1.dateSort > post2.dateSort ? -1 : 1;
+    });
   // console.log("portfolioProjects", portfolioProjects);
 
   return portfolioProjects;
