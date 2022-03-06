@@ -18,11 +18,10 @@ import photo from "../../public/assets/portfolio/sample.jpeg";
 import {} from "@chakra-ui/react";
 import {
   getPortfolioProjectBySlug,
-  getAllPortfolioProjects
+  getAllPortfolioProjects,
+  getProjectImagesByPath
 } from "../../lib/api";
 import markdownToHtml from "../../lib/markdownToHtml";
-
-const mockPortfolio = ["orange.300", "teal.500", "orange.500", "orange.700"];
 
 const parentGridStyles: GridProps = {
   templateColumns: {
@@ -71,17 +70,27 @@ const projectImagesGridItemStyles: GridItemProps = {
 // source real images
 // 🙅‍♀️ extract grid styles
 
+interface projectShape {
+  title?: string;
+  content?: string;
+  assets?: string[];
+  assetsNew?: string[];
+  slug?: string;
+  thumb?: string;
+}
+
 type PortfolioProjectProps = {
-  title: string;
-  project: any;
+  project: projectShape;
 };
 
-function PortfolioProject({ title, project }: PortfolioProjectProps) {
+function PortfolioProject({ project }: PortfolioProjectProps) {
   console.log("🧳🧳🧳🧳🧳🧳🧳🧳🧳🧳🧳🧳🧳🧳🧳");
   console.log("project?", project);
+  const { title, content, assets } = project;
   console.log("project.assets?", project.assets);
+
   return (
-    <Layout title={project.title ? project.title : "title"}>
+    <Layout title={title}>
       <Grid {...parentGridStyles}>
         {/* Banner Image */}
         <GridItem {...projectBannerGridItemStyles}>
@@ -93,17 +102,13 @@ function PortfolioProject({ title, project }: PortfolioProjectProps) {
         </GridItem>
         {/* Project Body */}
         <GridItem {...projectBodyGridItemStyles}>
-          <PortfolioBody content={project.content} title={project.title} />
+          <PortfolioBody content={content} title={title} />
         </GridItem>
         {/* Images */}
         <GridItem {...projectImagesGridItemStyles}>
           {/* stack */}
           <SimpleGrid {...nestedGridStyles}>
-            {mockPortfolio.map((x, i) => (
-              <PortfolioImage key={i} bg={x} />
-            ))}
-            {project.assets &&
-              project.assets.map((x, i) => <PortfolioImage key={i} src={x} />)}
+            {assets && assets.map((x, i) => <PortfolioImage key={i} src={x} />)}
           </SimpleGrid>
         </GridItem>
       </Grid>
@@ -133,28 +138,23 @@ type Params = {
 export async function getStaticProps({ params }: Params) {
   // console.log("🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨");
 
-  getProjectImagesByPath("foo");
+  const { slug } = params;
 
-  // console.log("👺👺👺👺👺👺👺👺👺👺");
+  const assets = getProjectImagesByPath(slug);
 
   // console.log("params", params);
   const project = getPortfolioProjectBySlug(params.slug, [
     "title",
-    "slug",
-    "assetDir",
-    "thumb",
-    "content",
-    "assets"
+    "content"
+    // "assets"
   ]);
 
-  // console.log("project", project);
-
   const content = await markdownToHtml(project.content || "");
-  // console.log("content", content);
 
   return {
     props: {
       project: {
+        assets,
         ...project,
         content
       }
