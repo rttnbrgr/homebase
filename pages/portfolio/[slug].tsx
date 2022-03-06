@@ -162,17 +162,20 @@ export async function getStaticProps({ params }: Params) {
   };
 }
 
-// export const getStaticPaths = async () => {
-//   return {
-//     paths: ["/portfolio/1"],
-//     fallback: false
-//   };
-// };
-
 export async function getStaticPaths() {
+  /**
+   *  this feels redundant?
+   *  getPortfolioProjectSlugs()
+   *   => slugs.map(getSlug())
+   *   => slugs??;
+   */
+
+  // get all project slugs
   const projects = getAllPortfolioProjects(["slug"]);
+
+  console.log("getAllPortfolioProjects", projects);
+
   return {
-    // props: { projects }
     paths: projects.map(project => {
       return {
         params: {
@@ -182,17 +185,8 @@ export async function getStaticPaths() {
     }),
     fallback: false
   };
-
-  // const posts = getAllPosts(["slug"]);
-
-  // return {
-  //   paths: posts.map(post => {
-  //     return {
-  //       params: {
-  //         slug: post.slug
-  //       }
-  //     };
-  //   }),
-  //   fallback: false
-  // };
 }
+
+// update asset dir logid
+// build thumbnail constructor
+// seperate out get images call
