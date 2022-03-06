@@ -1,26 +1,26 @@
 import React from "react";
-import { Box, Grid, GridItem, GridProps, Text } from "@chakra-ui/react";
-import NextLink from "next/link";
+import {
+  Grid,
+  GridItem,
+  GridItemProps,
+  GridProps,
+  SimpleGrid,
+  SimpleGridProps
+} from "@chakra-ui/react";
 import {
   Layout,
-  Grid as PortfolioGrid,
   Image as PortfolioImage,
   Body as PortfolioBody,
   BackLink as PortfolioBackLink
 } from "../../components/portfolio";
 import { responsivePad } from "../../components/portfolio/utils";
-import NextImage, { ImageProps } from "next/image";
 import photo from "../../public/assets/portfolio/sample.jpeg";
-import { SimpleGrid, SimpleGridProps, BoxProps } from "@chakra-ui/react";
+import {} from "@chakra-ui/react";
 import {
   getPortfolioProjectBySlug,
   getAllPortfolioProjects
 } from "../../lib/api";
 import markdownToHtml from "../../lib/markdownToHtml";
-
-//
-import markdownStyles from "./markdown-styles.module.css";
-import { getProjectImagesByPath } from "../../lib/api";
 
 const mockPortfolio = ["orange.300", "teal.500", "orange.500", "orange.700"];
 
@@ -44,11 +44,32 @@ const nestedGridStyles: SimpleGridProps = {
   rowGap: responsivePad
 };
 
+const projectBannerGridItemStyles: GridItemProps = {
+  colStart: { lg: 1 },
+  colSpan: { lg: 2 }
+};
+const backLinkGridItemStyles: GridItemProps = {
+  display: { base: "flex" },
+  flexDirection: "column",
+  justifyContent: "flex-end"
+};
+const projectBodyGridItemStyles: GridItemProps = {
+  border: "1px solid red",
+  rowStart: { lg: 2 },
+  colStart: { lg: 3 },
+  colSpan: { lg: 2 }
+};
+const projectImagesGridItemStyles: GridItemProps = {
+  colSpan: { lg: 2 },
+  rowStart: { lg: 2 }
+};
+
 // ✅ build image stack
 // ✅ build responsive styyles
 // ✅ build portfolio image comp (aspect + img)
 // build props mocking
 // source real images
+// 🙅‍♀️ extract grid styles
 
 type PortfolioProjectProps = {
   title: string;
@@ -63,28 +84,19 @@ function PortfolioProject({ title, project }: PortfolioProjectProps) {
     <Layout title={project.title ? project.title : "title"}>
       <Grid {...parentGridStyles}>
         {/* Banner Image */}
-        <GridItem colStart={{ lg: 1 }} colSpan={{ lg: 2 }}>
+        <GridItem {...projectBannerGridItemStyles}>
           <PortfolioImage src={photo} alt="Picture of the author" />
         </GridItem>
         {/* Back Link*/}
-        <GridItem
-          display={{ base: "flex" }}
-          flexDirection="column"
-          justifyContent="flex-end"
-        >
+        <GridItem {...backLinkGridItemStyles}>
           <PortfolioBackLink />
         </GridItem>
         {/* Project Body */}
-        <GridItem
-          border="1px solid lime"
-          rowStart={{ lg: 2 }}
-          colStart={{ lg: 3 }}
-          colSpan={{ lg: 2 }}
-        >
+        <GridItem {...projectBodyGridItemStyles}>
           <PortfolioBody content={project.content} title={project.title} />
         </GridItem>
         {/* Images */}
-        <GridItem colSpan={{ lg: 2 }} rowStart={{ lg: 2 }}>
+        <GridItem {...projectImagesGridItemStyles}>
           {/* stack */}
           <SimpleGrid {...nestedGridStyles}>
             {mockPortfolio.map((x, i) => (
