@@ -40,12 +40,20 @@ const nestedGridStyles: SimpleGridProps = {
     sm: 2
   },
   columnGap: responsivePad,
-  rowGap: responsivePad
+  rowGap: responsivePad,
+  maxWidth: {
+    base: "480px",
+    sm: "none"
+  }
 };
 
 const projectBannerGridItemStyles: GridItemProps = {
   colStart: { lg: 1 },
-  colSpan: { lg: 2 }
+  colSpan: { lg: 2 },
+  maxWidth: {
+    base: "480px",
+    sm: "none"
+  }
 };
 const backLinkGridItemStyles: GridItemProps = {
   display: { base: "flex" },
@@ -74,7 +82,6 @@ interface projectShape {
   title?: string;
   content?: string;
   assets?: string[];
-  assetsNew?: string[];
   slug?: string;
   thumb?: string;
 }
@@ -116,10 +123,6 @@ function PortfolioProject({ project }: PortfolioProjectProps) {
   );
 }
 
-// PortfolioProject.defaultProps = {
-//   title: "Portfolio Item"
-// };
-
 export default PortfolioProject;
 
 type Params = {
@@ -127,13 +130,6 @@ type Params = {
     slug: string;
   };
 };
-
-// empty
-// export async function getStaticProps() {
-//   return {
-//     props: {}
-//   };
-// }
 
 export async function getStaticProps({ params }: Params) {
   // console.log("🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨");
@@ -145,7 +141,8 @@ export async function getStaticProps({ params }: Params) {
   // console.log("params", params);
   const project = getPortfolioProjectBySlug(params.slug, [
     "title",
-    "content"
+    "content",
+    "thumb"
     // "assets"
   ]);
 
