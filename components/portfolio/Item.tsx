@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import { AspectRatio, Box, BoxProps } from "@chakra-ui/react";
+import { Box, BoxProps } from "@chakra-ui/react";
 import NextLink, { LinkProps } from "next/link";
 import PortfolioImage, { PortfolioImageProps } from "./Image";
 
@@ -10,10 +10,13 @@ const portfolioGridItemStyles: BoxProps = {
   }
 };
 
-type Props = LinkProps & BoxProps & PortfolioImageProps & {};
+type Props = BoxProps &
+  PortfolioImageProps & {
+    slug?: string;
+  };
 
 const PortfolioGridItem = ({
-  href,
+  slug,
   src,
   loader,
   alt,
@@ -28,18 +31,16 @@ const PortfolioGridItem = ({
     width,
     height
   };
+
+  const projectLink = `/portfolio/${slug}`;
+
   return (
-    <NextLink href={href}>
-      {/* just the hover styles */}
+    <NextLink href={projectLink}>
       <Box {...portfolioGridItemStyles} {...props}>
         <PortfolioImage {...portfolioImageProps} />
       </Box>
     </NextLink>
   );
-};
-
-PortfolioGridItem.defaultProps = {
-  href: "/portfolio/1"
 };
 
 export default memo(PortfolioGridItem);
