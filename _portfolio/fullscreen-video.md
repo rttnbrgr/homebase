@@ -3,7 +3,6 @@ title: "Fullscreen Video"
 client: "Personal"
 datePrint: "2014"
 dateSort: 2015-08-19
-thumb: ./thumb.jpg
 magicPath: "fullscreen-video"
 ---
 

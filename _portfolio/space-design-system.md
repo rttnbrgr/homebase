@@ -4,7 +4,6 @@ title: "Space Design System"
 client: "Sprinklr"
 datePrint: "2018-2020"
 dateSort: 2020-06-01
-thumb: ./thumb.jpg
 magicPath: "space-design-system"
 ---
 

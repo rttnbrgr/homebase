@@ -4,7 +4,6 @@ title: "Display"
 client: "Sprinklr"
 datePrint: "2016-2018"
 dateSort: 2020-06-02
-thumb: ./thumb.jpg
 magicPath: "display"
 ---
 
