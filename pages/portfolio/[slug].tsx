@@ -71,13 +71,6 @@ const projectImagesGridItemStyles: GridItemProps = {
   rowStart: { lg: 2 }
 };
 
-// ✅ build image stack
-// ✅ build responsive styyles
-// ✅ build portfolio image comp (aspect + img)
-// build props mocking
-// source real images
-// 🙅‍♀️ extract grid styles
-
 interface projectShape {
   title?: string;
   content?: string;
@@ -93,7 +86,7 @@ type PortfolioProjectProps = {
 function PortfolioProject({ project }: PortfolioProjectProps) {
   console.log("🧳🧳🧳🧳🧳🧳🧳🧳🧳🧳🧳🧳🧳🧳🧳");
   console.log("project?", project);
-  const { title, content, assets } = project;
+  const { title, content, assets, thumb } = project;
   console.log("project.assets?", project.assets);
 
   return (
@@ -101,7 +94,7 @@ function PortfolioProject({ project }: PortfolioProjectProps) {
       <Grid {...parentGridStyles}>
         {/* Banner Image */}
         <GridItem {...projectBannerGridItemStyles}>
-          <PortfolioImage src={photo} alt="Picture of the author" />
+          <PortfolioImage src={thumb} alt="Picture of the author" />
         </GridItem>
         {/* Back Link*/}
         <GridItem {...backLinkGridItemStyles}>
@@ -132,20 +125,17 @@ type Params = {
 };
 
 export async function getStaticProps({ params }: Params) {
-  // console.log("🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨");
-
+  // Desxtruct the slug
   const { slug } = params;
-
+  // Get all the assets
   const assets = getProjectImagesByPath(slug);
-
-  // console.log("params", params);
+  // Get the rest of the project fields
   const project = getPortfolioProjectBySlug(params.slug, [
     "title",
     "content",
     "thumb"
-    // "assets"
   ]);
-
+  // convert md => html
   const content = await markdownToHtml(project.content || "");
 
   return {

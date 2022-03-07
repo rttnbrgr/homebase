@@ -33,12 +33,7 @@ function Portfolio({ projects }: PortfolioProps) {
 export default Portfolio;
 
 export const getStaticProps = async () => {
-  const projects = getAllPortfolioProjects([
-    "title",
-    "slug",
-    "thumb",
-    "assetDir"
-  ]);
+  const projects = getAllPortfolioProjects(["title", "slug", "thumb"]);
   return {
     props: { projects }
   };
