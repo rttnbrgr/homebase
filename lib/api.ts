@@ -60,60 +60,24 @@ export function getPortfolioProjectSlugs() {
 }
 
 export function getProjectImagesByPath(slug: string) {
-  console.log("getProjectImagesByPath");
+  // console.log("🚨🚨🚨🚨 getProjectImagesByPath 🚨🚨🚨🚨");
+  // console.log("slug: ", slug);
 
-  const staticDir = "public/assets/portfolio/sample";
-  // const publicPortfolioPath =
-  const publicDir = "/assets/portfolio/sample";
-  const directoryPath1 = "public/assets/portfolio/jaguar";
-  const directoryPath = join(process.cwd(), staticDir);
+  const publicPath = join("/assets/portfolio/", slug);
+  const assetDirectory = join(process.cwd(), "public", publicPath);
 
-  let imageFilesSync = fs
-    .readdirSync(directoryPath)
+  let images = fs
+    // Get all images in the assets dir
+    .readdirSync(assetDirectory)
+    // remove ds store
     .filter(x => !x.startsWith(".DS_Store"))
-    .map(x => publicDir.concat("/", x)); // remove ds store
-  console.log("imageFilesSync", imageFilesSync);
+    // remove the thumb
+    .filter(x => !x.startsWith("thumb"))
+    // prepend file name w/ public path
+    .map(x => publicPath.concat("/", x));
+  console.log("imageFilesSync2", images);
 
-  return imageFilesSync;
-
-  /*
-  //passsing directoryPath and callback function
-  // let imageFiles = await fs.promises.readdir(directoryPath, function (err, files) {
-  let imageFiles = await fs.readdirSync(directoryPath, function (err, files) {
-    // console.log("inside readdir", files);
-    //handling error
-    if (err) {
-      console.log("Unable to scan directory: " + err);
-      return [];
-    }
-    //listing all files using forEach
-    // files.forEach(function (file) {
-    //   // Do whatever you want to do with the file
-    //   console.log(file);
-    // });
-
-    
-    let images = files
-      // remove ds store
-      .filter(x => !x.startsWith(".DS_Store"))
-      .map(function (file) {
-        // Do whatever you want to do with the file
-        console.log("file: ", file);
-        return file;
-      });
-
-    const foooo = "fo";
-
-    console.log("what are the images", images);
-    console.log("images.length?", images.length);
-
-    // return images.length ? images : ["assets", "here"];
-    return images.length;
-  });
-  */
-
-  // return images.length ? images : ["assets", "here"];
-  // return ["assets", "here"];
+  return images;
 }
 
 type projectFields =
@@ -208,7 +172,7 @@ export function getPortfolioProjectBySlug(slug: string, fields: string[] = []) {
     //   // items[field] = getProjectImagesByPath(slug);
     // }
 
-    // the catch all
+    // the catch all for any yaml value
     if (typeof data[field] !== "undefined") {
       console.log("fields in last catch: ", field);
       items[field] = data[field];
