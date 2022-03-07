@@ -6,4 +6,4 @@ dateSort: 2015-08-31
 magicPath: "jaguar"
 ---
 
-Write a description
+Album art for "Jaguar" (Aaron Requeña)

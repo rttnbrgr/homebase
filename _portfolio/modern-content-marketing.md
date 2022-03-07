@@ -6,9 +6,9 @@ dateSort: 2020-05-31
 magicPath: "modern-content-marketing"
 ---
 
-Write a description
+Redesign and launch of the "modern marketing" product tool suite for Sprinklr's CXM platform.
 
-### One
+<!-- ### One
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6ipWH7M8AWQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -28,4 +28,4 @@ Write a description
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sjP91zZ-C_4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/LDrXL-pBYaM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LDrXL-pBYaM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->

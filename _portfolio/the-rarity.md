@@ -6,4 +6,4 @@ dateSort: 2015-08-27
 magicPath: "the-rarity"
 ---
 
-Write a description
+Merch and lookbook photoshoot for The Rarity album release.

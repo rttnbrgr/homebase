@@ -6,4 +6,4 @@ dateSort: 2015-08-28
 magicPath: "acq-tunes"
 ---
 
-Write a description
+Some cartoons and promo I created for the record label Acquired Taste Club.

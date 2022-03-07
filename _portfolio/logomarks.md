@@ -6,4 +6,4 @@ dateSort: 2015-08-30
 magicPath: "logomarks"
 ---
 
-Write a description
+Some logomarks created for varioius brands.

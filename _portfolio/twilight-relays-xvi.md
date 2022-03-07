@@ -6,4 +6,4 @@ dateSort: 2015-08-23
 magicPath: "twilight-relays-xvi"
 ---
 
-Write a description
+Retail and exclusive merch for the Twilight Relays 2016.

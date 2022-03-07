@@ -6,4 +6,4 @@ dateSort: 2015-08-26
 magicPath: "cwest-office-supplies"
 ---
 
-Write a description
+Logo and branding for C-West office supplies.

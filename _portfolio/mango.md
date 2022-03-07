@@ -6,4 +6,4 @@ dateSort: 2015-08-24
 magicPath: "mango"
 ---
 
-Write a description
+A UI proof of concept project.

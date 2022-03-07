@@ -6,4 +6,4 @@ dateSort: 2015-08-22
 magicPath: "broam-poster"
 ---
 
-Write a description
+A poster that I did for an athlete focused membrobilia componay.

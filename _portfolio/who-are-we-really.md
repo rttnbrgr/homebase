@@ -6,4 +6,4 @@ dateSort: 2015-08-20
 magicPath: "who-are-we-really"
 ---
 
-Write a description
+Album art for "Who Are We Really" (Aaron Requeña)

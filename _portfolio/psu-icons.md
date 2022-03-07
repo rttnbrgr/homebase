@@ -6,4 +6,4 @@ dateSort: 2015-08-29
 magicPath: "psu-icons"
 ---
 
-Write a description
+An icon set developed for continuing education initiatives at PSU.

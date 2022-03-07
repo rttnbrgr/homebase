@@ -6,4 +6,4 @@ dateSort: 2015-08-25
 magicPath: "redline-training"
 ---
 
-Write a description
+Logo and branding for Advnced Redline training.
