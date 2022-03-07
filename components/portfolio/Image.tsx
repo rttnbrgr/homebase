@@ -27,6 +27,7 @@ const PortfolioImage = ({
           width={width}
           height={height}
           layout="fill"
+          objectFit="cover"
         />
       ) : (
         <Text>{alt ? alt : "No IMG"}</Text>

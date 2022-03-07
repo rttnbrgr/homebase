@@ -3,6 +3,10 @@ import { join } from "path";
 import matter from "gray-matter";
 import { stringify } from "remark";
 
+/**
+ * Blog
+ */
+
 const postsDirectory = join(process.cwd(), "_posts");
 
 export function getPostSlugs() {
@@ -50,6 +54,10 @@ export function getAllPosts(fields: string[] = []) {
   // console.log("posts", posts);
   return posts;
 }
+
+/**
+ * Portfolio
+ */
 
 // returns the full path to our _portfolio folder on the system
 const portfolioProjectsDirectory = join(process.cwd(), "_portfolio");
