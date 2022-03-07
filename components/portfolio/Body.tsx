@@ -13,6 +13,17 @@ const PortfolioBody = ({ content, title }: Props) => {
       {content && (
         <Box
           textStyle="portfolio.text"
+          sx={{
+            "* + *": {
+              marginTop: "1rem"
+            },
+            h3: {
+              fontSize: "1.25rem"
+            },
+            a: {
+              textDecoration: "underline"
+            }
+          }}
           dangerouslySetInnerHTML={{ __html: content }}
         />
       )}
