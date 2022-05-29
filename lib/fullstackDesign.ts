@@ -16,19 +16,17 @@ const ProjectGradientPrototype: Project = {
   links: [
     {
       displayText: "Figma",
-      url: "https://chakra-ui.com/docs/components/navigation/link-overlay",
+      url: "https://www.figma.com/community/file/1112438097878878061",
     },
     {
       displayText: "Codesandbox",
-      url: "#",
+      url: "https://codesandbox.io/s/github/rttnbrgr/fullstack-design",
     },
     {
       displayText: "Github",
-      url: "#",
+      url: "https://github.com/rttnbrgr/fullstack-design",
     },
   ],
 };
 
-export const projects: Project[] = [
-  ProjectGradientPrototype
-];
+export const projects: Project[] = [ProjectGradientPrototype];
