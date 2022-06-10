@@ -21,7 +21,7 @@ const headerStyles: BoxProps = {
 };
 
 const headerTextStyles: TextProps = {
-  maxWidth: "500px", // repalce with thme var
+  // maxWidth: "500px", // repalce with thme var
   textAlign: "center",
   lineHeight: "1",
   px: { base: 0, sm: 4, md: 8 },
