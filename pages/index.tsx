@@ -2,6 +2,7 @@ import Head from "next/head";
 import styles from "../styles/homepage.module.css";
 import Meta from "../components/meta";
 import Link from "next/link";
+import MetaPage from "../components/MetaPage";
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -24,16 +25,7 @@ const Index = ({}: Props) => {
   return (
     <>
       <LayoutFork>
-        <Head>
-          {/* do I need these? */}
-          <meta charSet="UTF-8" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-          />
-          <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-          <title>R T T N B R G R | 🤢🍔</title>
-        </Head>
+        <MetaPage title="R T T N B R G R | 🤢🍔" titleSuffix={false} />
 
         <div className={styles.root}>
           <div>
