@@ -3,6 +3,26 @@ import Link from "next/link";
 import MetaPage from "../components/MetaPage";
 import { LayoutChakra } from "../components/layouts";
 import { AvatarHome } from "../components/AvatarHome";
+import { Box } from "@chakra-ui/react";
+
+const rootStyles = {};
+
+const rootSx = {
+  "--black": "#0f1014",
+  "--white": "#fff",
+  fontSize: "1.5rem",
+  padding: "1.5em",
+  display: "flex",
+  alignItems: "center",
+
+  "@media screen and (min-width: 768px)": {
+    fontSize: "2.5rem"
+  },
+
+  "@media screen and (min-width: 1440px)": {
+    fontSize: "3.25rem"
+  }
+};
 
 type Props = {};
 
@@ -10,7 +30,7 @@ const Index = ({}: Props) => {
   return (
     <LayoutChakra>
       <MetaPage title="R T T N B R G R | 🤢🍔" titleSuffix={false} />
-      <div className={styles.root}>
+      <Box sx={rootSx} className="rootBox">
         <div>
           <div className={styles.group}>
             <AvatarHome />
@@ -71,7 +91,7 @@ const Index = ({}: Props) => {
             </li>
           </ul>
         </div>
-      </div>
+      </Box>
     </LayoutChakra>
   );
 };
@@ -80,6 +100,6 @@ export default Index;
 
 export const getStaticProps = async () => {
   return {
-    props: {},
+    props: {}
   };
 };
