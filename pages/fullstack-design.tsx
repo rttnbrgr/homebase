@@ -1,49 +1,10 @@
 import React from "react";
 import Head from "next/head";
-import Meta from "../components/meta";
-import {
-  Box,
-  ChakraProvider,
-  Container,
-  HStack,
-  Text,
-  VStack,
-  Link as ChakraLink,
-  Button,
-} from "@chakra-ui/react";
-import theme from "../theme";
-import { projects, Project } from "../lib/fullstackDesign";
+import { Container, VStack } from "@chakra-ui/react";
+import { projects } from "../lib/fullstackDesign";
 import Header from "../components/reviews/Header";
 import { LayoutChakra } from "../components/layouts/LayoutChakra";
-
-/**
- * Project
- */
-
-function Project({ title, description, links }: Project) {
-  return (
-    <VStack bg="" maxW="500px" spacing="4" align="start">
-      <Text
-        textStyle="review.text"
-        p="2"
-        layerStyle="reviewTheme.alt"
-        display="inline-flex"
-      >
-        {title}
-      </Text>
-      <Text textStyle="review.text">{description}</Text>
-      {links && (
-        <HStack spacing={2}>
-          {links.map(({ displayText, url }, i) => (
-            <ChakraLink variant="reviewButton" key={i} href={url} isExternal>
-              <Button>{displayText}</Button>
-            </ChakraLink>
-          ))}
-        </HStack>
-      )}
-    </VStack>
-  );
-}
+import { Project } from "../components/fullstackDesign/Project";
 
 type ReviewProps = {};
 
