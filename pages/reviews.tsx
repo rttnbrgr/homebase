@@ -5,19 +5,14 @@ import reviews from "../lib/reviews";
 import { Review } from "../components/reviews";
 import Header from "../components/reviews/Header";
 import { LayoutChakra } from "../components/layouts";
+import MetaPage from "../components/MetaPage";
 
 type ReviewProps = {};
 
 function Reviews({}: ReviewProps) {
   return (
     <LayoutChakra>
-      <Head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-        <title>REVIEWS | R T T N B R G R</title>
-      </Head>
-
+      <MetaPage title="REVIEWS" />
       <Header />
       <Container variant="review" pb="8">
         {reviews.map((review, i) => {

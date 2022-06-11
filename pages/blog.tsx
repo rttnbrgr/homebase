@@ -8,6 +8,7 @@ import Head from "next/head";
 import { CMS_NAME } from "../lib/constants";
 import Post from "../types/post";
 import Header from "../components/header";
+import MetaPage from "../components/MetaPage";
 
 type Props = {
   allPosts: Post[];
@@ -19,9 +20,7 @@ const Blog = ({ allPosts }: Props) => {
   return (
     <>
       <LayoutDefault>
-        <Head>
-          <title>Blog</title>
-        </Head>
+        <MetaPage title="Blog" />
         <Container>
           <Header />
           {allPosts.length > 0 && <MoreStories posts={allPosts} />}
