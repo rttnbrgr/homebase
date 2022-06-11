@@ -47,25 +47,21 @@ const Index = ({}: Props) => {
             </div>
 
             <div className={styles.group}>
+              <p className={styles["text--body"]}>👋 Hi.</p>
               <p className={styles["text--body"]}>
-                Hi. My name is Nathan Mateo Rothenberger. I am a designer and
-                developer who has been building things on the internet for over
-                a decade. Most recently, I worked at Sprinklr as a Design System
-                Engineer and UX Designer. I helped build out our design system
-                including the UI Kit, documentation, and design ops for a team
-                of 30+ designers.
+                My name is Nathan Mateo Rothenberger.
               </p>
               <p className={styles["text--body"]}>
-                I love pulling designs apart and understanding how all of the
-                pieces fit together. I care deeply about the intersection of
-                design and engineering and how those two worlds collaborate to
-                build better products.
+                I’m a designer & developer who likes making stuff for the web.
+                Currently, I’m helping build the Camp design system at Active
+                Campaign.
               </p>
               <p className={styles["text--body"]}>
-                I am currently looking for a new opportunity in either the
-                Dallas or Portland area as well as a new hour long drama to dive
-                into. If you have leads on either please reach out.
+                I’m also working on a few things that aren’t ready to share just
+                yet. You can check out the other stuff I’ve made below or say
+                whatsup on any of the socials.
               </p>
+              <p className={styles["text--body"]}>Take care ✌️</p>
             </div>
             <ul className={styles.list}>
               <h1 className={styles["text--header"]}>Links</h1>
@@ -109,6 +105,6 @@ export default Index;
 
 export const getStaticProps = async () => {
   return {
-    props: {}
+    props: {},
   };
 };
