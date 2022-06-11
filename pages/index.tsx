@@ -2,6 +2,7 @@ import styles from "../styles/homepage.module.css";
 import Link from "next/link";
 import MetaPage from "../components/MetaPage";
 import { LayoutChakra } from "../components/layouts";
+import { AvatarHome } from "../components/AvatarHome";
 
 type Props = {};
 
@@ -12,11 +13,7 @@ const Index = ({}: Props) => {
       <div className={styles.root}>
         <div>
           <div className={styles.group}>
-            <img
-              src="assets/homepage/avi-1024.jpg"
-              alt="Nathan Rothenberger headshot"
-              className={styles.profile}
-            />
+            <AvatarHome />
             <h1 className={styles["text--header"]}>@rttnbrgr</h1>
           </div>
 
