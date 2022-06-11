@@ -14,6 +14,7 @@ import {
 import theme from "../theme";
 import { projects, Project } from "../lib/fullstackDesign";
 import Header from "../components/reviews/Header";
+import { LayoutChakra } from "../components/layouts/LayoutChakra";
 
 /**
  * Project
@@ -48,27 +49,22 @@ type ReviewProps = {};
 
 function FullstackDesign({}: ReviewProps) {
   return (
-    <>
-      <Meta />
+    <LayoutChakra>
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <title>Fullstack Design | R T T N B R G R</title>
       </Head>
-      <ChakraProvider theme={theme}>
-        <Box minH="100vh" m={"0 auto"}>
-          <Header title="Fullstack Design" />
-          <Container variant="review" pb="8">
-            <VStack spacing={4}>
-              {projects.map((project, i) => (
-                <Project {...project} key={i} />
-              ))}
-            </VStack>
-          </Container>
-        </Box>
-      </ChakraProvider>
-    </>
+      <Header title="Fullstack Design" />
+      <Container variant="review" pb="8">
+        <VStack spacing={4}>
+          {projects.map((project, i) => (
+            <Project {...project} key={i} />
+          ))}
+        </VStack>
+      </Container>
+    </LayoutChakra>
   );
 }
 
