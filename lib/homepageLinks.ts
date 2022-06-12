@@ -1,9 +1,9 @@
 const links = [
-  {
-    href: "https://www.rottenburger.com/",
-    isLocal: false,
-    linkText: "Portfolio"
-  },
+  //   {
+  //     href: "https://www.rottenburger.com/",
+  //     isLocal: false,
+  //     linkText: "Portfolio"
+  //   },
 
   {
     href: "/blog",
@@ -20,7 +20,7 @@ const links = [
   {
     href: "/fullstack-design",
     isLocal: true,
-    linkText: "Fullstack"
+    linkText: "Fullstack Design"
   },
 
   {
