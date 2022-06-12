@@ -3,7 +3,7 @@ import Link from "next/link";
 import MetaPage from "../components/MetaPage";
 import { LayoutChakra } from "../components/layouts";
 import { AvatarHome } from "../components/AvatarHome";
-import { Box } from "@chakra-ui/react";
+import { Box, Stack, VStack } from "@chakra-ui/react";
 
 const rootStyles = {};
 
@@ -31,13 +31,13 @@ const Index = ({}: Props) => {
     <LayoutChakra>
       <MetaPage title="R T T N B R G R | 🤢🍔" titleSuffix={false} />
       <Box sx={rootSx} className="rootBox">
-        <div>
+        <VStack spacing="2em" align="start">
           <div className={styles.group}>
             <AvatarHome />
             <h1 className={styles["text--header"]}>@rttnbrgr</h1>
           </div>
 
-          <div className={styles.group}>
+          <VStack spacing="1em" align="start">
             <p className={styles["text--body"]}>👋 Hi.</p>
             <p className={styles["text--body"]}>
               My name is Nathan Mateo Rothenberger.
@@ -53,7 +53,7 @@ const Index = ({}: Props) => {
               whatsup on any of the socials.
             </p>
             <p className={styles["text--body"]}>Take care ✌️</p>
-          </div>
+          </VStack>
           <ul className={styles.list}>
             <h1 className={styles["text--header"]}>Links</h1>
             <li className={styles["list-item"]}>
@@ -90,7 +90,7 @@ const Index = ({}: Props) => {
               </a>
             </li>
           </ul>
-        </div>
+        </VStack>
       </Box>
     </LayoutChakra>
   );
