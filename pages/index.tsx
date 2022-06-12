@@ -2,7 +2,6 @@ import styles from "../styles/homepage.module.css";
 import Link from "next/link";
 import MetaPage from "../components/MetaPage";
 import { LayoutChakra } from "../components/layouts";
-import { AvatarHome } from "../components/AvatarHome";
 import { Box, Stack, VStack } from "@chakra-ui/react";
 
 const rootStyles = {};
@@ -33,7 +32,6 @@ const Index = ({}: Props) => {
       <Box sx={rootSx} className="rootBox">
         <VStack spacing="2em" align="start">
           <div className={styles.group}>
-            <AvatarHome />
             <h1 className={styles["text--header"]}>@rttnbrgr</h1>
           </div>
 
