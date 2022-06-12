@@ -10,15 +10,17 @@ const config: ThemeConfig = {
 };
 
 const breakpoints = createBreakpoints({
-  sm: "40em",
-  md: "52em",
-  lg: "64em",
-  xl: "80em"
+  sm: "40em", // 640
+  smedium: "48em", // 768
+  md: "52em", // 832
+  lg: "64em", // 1024
+  xl: "80em", // 1280
+  "2xl": "90em" // 1440
 });
 
 const fonts = {
   // default: '"Times New Roman", "Helvetica", sans-serif',
-  default: '"Helvetica", sans-serif',
+  default: '"Helvetica Neue", sans-serif',
   debug: "monospace"
 };
 
@@ -30,6 +32,21 @@ const baseTextStyles: TextProps = {
   fontWeight: 700
 };
 
+const rootIndexTextStyles = {
+  fontSize: {
+    // base: "1rem"
+    base: "1.5rem",
+    smedium: "2.5rem",
+    "2xl": "3.25rem"
+  },
+  fontFamily: "default",
+  color: "onBg",
+  lineHeight: "1.2",
+  fontWeight: 700,
+  fontStyle: "normal",
+  letterSpacing: "-0.7px"
+};
+
 const styles: Styles = {
   global: props => ({
     body: {
@@ -37,10 +54,10 @@ const styles: Styles = {
       bg: mode("bg", "onBg")(props),
       color: mode("onBg", "bg")(props),
       borderColor: mode("onBg", "bg")(props)
-    },
-    "h1, h2, h3, h4": {
-      ...baseTextStyles
     }
+    // "h1, h2, h3, h4": {
+    //   ...baseTextStyles
+    // }
   })
 };
 
@@ -51,7 +68,8 @@ const theme = extendTheme({
   styles,
   colors: {
     bg: "white",
-    onBg: "black"
+    onBg: "#0f1014",
+    debugColor: "blue"
   },
   layerStyles: {
     debug: {
@@ -79,6 +97,16 @@ const theme = extendTheme({
         color: "bg",
         borderColor: "bg"
       }
+    },
+    resetList: {
+      listStyle: "none",
+      margin: 0,
+      padding: 0
+    },
+    resetLink: {
+      textDecoration: "none",
+      color: "inherit",
+      fontSize: "inherit"
     }
   },
   fonts,
@@ -102,6 +130,15 @@ const theme = extendTheme({
         fontSize: "1em",
         lineHeight: "1.25"
       }
+    },
+    homeRoot: {
+      ...rootIndexTextStyles
+    },
+    homeHeader: {
+      display: "inline-block",
+      background: "onBg",
+      color: "bg",
+      px: "0.25rem"
     }
   },
   components: {
