@@ -1,14 +1,9 @@
-import Link from "next/link";
 import MetaPage from "../components/MetaPage";
 import { LayoutChakra } from "../components/layouts";
-import {
-  Box,
-  VStack,
-  Text,
-  Link as ChakraLink,
-  UnorderedList,
-  ListItem
-} from "@chakra-ui/react";
+import { Box, VStack, Text } from "@chakra-ui/react";
+import { MonoLinkList } from "../components/MonoLinkList";
+import { links } from "../lib/homepageLinks";
+import { MonoLink } from "../components/MonoLink";
 
 const rootStyles = {
   // Text styles
@@ -48,50 +43,15 @@ const Index = ({}: Props) => {
             <Text>Take care ✌️</Text>
           </VStack>
 
-          <UnorderedList layerStyle="resetList">
-            <Text as="h2" textStyle="homeHeader">
-              Links
-            </Text>
-            <ListItem>
-              <ChakraLink
-                layerStyle="resetLink"
-                href="https://www.rottenburger.com/"
-              >
-                Portfolio
-              </ChakraLink>
-            </ListItem>
-            <ListItem>
-              <Link href="/blog">
-                <ChakraLink layerStyle="resetLink">Blog</ChakraLink>
-              </Link>
-            </ListItem>
-            <ListItem>
-              <Link href="/reviews">
-                <ChakraLink layerStyle="resetLink">Reviews</ChakraLink>
-              </Link>
-            </ListItem>
-            <ListItem>
-              <Link href="/fullstack-design">
-                <ChakraLink layerStyle="resetLink">Fullstack</ChakraLink>
-              </Link>
-            </ListItem>
-            <ListItem>
-              <ChakraLink
-                layerStyle="resetLink"
-                href="https://github.com/rttnbrgr"
-              >
-                Github
-              </ChakraLink>
-            </ListItem>
-            <ListItem>
-              <ChakraLink
-                layerStyle="resetLink"
-                href="https://www.linkedin.com/in/nathan-rothenberger-11765b16/"
-              >
-                LinkedIn
-              </ChakraLink>
-            </ListItem>
-          </UnorderedList>
+          <MonoLinkList title="Links">
+            {links.map(({ linkText, ...link }, i) => {
+              return (
+                <MonoLink key={i} {...link}>
+                  {linkText}
+                </MonoLink>
+              );
+            })}
+          </MonoLinkList>
         </VStack>
       </Box>
     </LayoutChakra>
