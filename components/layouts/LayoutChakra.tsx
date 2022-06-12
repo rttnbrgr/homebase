@@ -12,7 +12,7 @@ const LayoutChakra = ({ children }: LayoutProps) => {
     <>
       <Meta />
       <ChakraProvider theme={theme}>
-        <div className="min-h-screen flex justify-center items-center">
+        <div className="min-h-screen flex justify-center items-start">
           <main>{children}</main>
         </div>
       </ChakraProvider>
