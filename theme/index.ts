@@ -3,6 +3,13 @@ import { extendTheme, ThemeConfig, TextProps } from "@chakra-ui/react";
 import { createBreakpoints, mode, Styles } from "@chakra-ui/theme-tools";
 import Review from "../components/reviews/ReviewStyle";
 import Button from "../components/reviews/ButtonStyle";
+import {
+  fonts,
+  fontSizes,
+  baseTextStyles,
+  rootIndexTextStyles,
+  textStyles
+} from "./typography";
 
 const config: ThemeConfig = {
   initialColorMode: "light",
@@ -18,34 +25,34 @@ const breakpoints = createBreakpoints({
   "2xl": "90em" // 1440
 });
 
-const fonts = {
-  // default: '"Times New Roman", "Helvetica", sans-serif',
-  default: '"Helvetica Neue", sans-serif',
-  debug: "monospace"
-};
+// const fonts = {
+//   // default: '"Times New Roman", "Helvetica", sans-serif',
+//   default: '"Helvetica Neue", sans-serif',
+//   debug: "monospace"
+// };
 
-const baseTextStyles: TextProps = {
-  margin: 0,
-  padding: 0,
-  lineHeight: 1,
-  fontFamily: fonts.default,
-  fontWeight: 700
-};
+// const baseTextStyles: TextProps = {
+//   margin: 0,
+//   padding: 0,
+//   lineHeight: 1,
+//   fontFamily: fonts.default,
+//   fontWeight: 700
+// };
 
-const rootIndexTextStyles = {
-  fontSize: {
-    // base: "1rem"
-    base: "1.5rem",
-    smedium: "2.5rem",
-    "2xl": "3.25rem"
-  },
-  fontFamily: "default",
-  color: "onBg",
-  lineHeight: "1.2",
-  fontWeight: 700,
-  fontStyle: "normal",
-  letterSpacing: "-0.7px"
-};
+// const rootIndexTextStyles = {
+//   fontSize: {
+//     // base: "1rem"
+//     base: "1.5rem",
+//     smedium: "2.5rem",
+//     "2xl": "3.25rem"
+//   },
+//   fontFamily: "default",
+//   color: "onBg",
+//   lineHeight: "1.2",
+//   fontWeight: 700,
+//   fontStyle: "normal",
+//   letterSpacing: "-0.7px"
+// };
 
 const styles: Styles = {
   global: props => ({
@@ -110,7 +117,9 @@ const theme = extendTheme({
     }
   },
   fonts,
+  fontSizes,
   textStyles: {
+    ...textStyles,
     review: {
       header: {
         ...baseTextStyles,
