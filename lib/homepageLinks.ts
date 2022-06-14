@@ -22,6 +22,11 @@ const links = [
     isLocal: true,
     linkText: "Fullstack Design"
   },
+  {
+    href: "/theme",
+    isLocal: true,
+    linkText: "Theme"
+  },
 
   {
     href: "https://github.com/rttnbrgr",
