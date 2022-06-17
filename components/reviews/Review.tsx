@@ -4,7 +4,9 @@ import type { SystemStyleFunction } from "@chakra-ui/theme-tools";
 import { Review } from "../../lib/reviews";
 
 const baseStyle: SystemStyleFunction = props => {
-  return {};
+  return {
+    maxWidth: "400px"
+  };
 };
 
 const reviewStyles = {

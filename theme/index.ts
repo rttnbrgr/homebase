@@ -168,6 +168,9 @@ const theme = extendTheme({
       variants: {
         reviews: {
           maxW: "500px"
+        },
+        none: {
+          maxW: "none"
         }
       }
     }

@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Flex, VStack } from "@chakra-ui/react";
+import { Container, SimpleGrid, VStack } from "@chakra-ui/react";
 import reviews from "../lib/reviews";
 import { Review } from "../components/reviews";
 import Header from "../components/reviews/Header";
@@ -13,8 +13,8 @@ function Reviews({}: ReviewsProps) {
     <LayoutChakra>
       <MetaPage title="REVIEWS" />
       <Header />
-      <Container variant="review" pb="8">
-        <VStack spacing="8">
+      <Container variant="none" pb="8">
+        <SimpleGrid columns={{ base: 1, lg: 2 }} spacing="12">
           {reviews.map((review, i) => {
             const { name, title, reviewText } = review;
             return (
@@ -26,7 +26,7 @@ function Reviews({}: ReviewsProps) {
               />
             );
           })}
-        </VStack>
+        </SimpleGrid>
       </Container>
     </LayoutChakra>
   );
