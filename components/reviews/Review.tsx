@@ -1,11 +1,22 @@
 import React from "react";
 import { VStack, Box, Text, useStyleConfig } from "@chakra-ui/react";
+import type { SystemStyleFunction } from "@chakra-ui/theme-tools";
 import { Review } from "../../lib/reviews";
 
-type ReviewNewProps = Omit<Review, "avatar">;
+const baseStyle: SystemStyleFunction = props => {
+  return {};
+};
 
-const ReviewNew = ({ reviewText, name, title }: ReviewNewProps) => {
-  const styles = useStyleConfig("ReviewNew", {});
+const reviewStyles = {
+  baseStyle,
+  variants: {},
+  defaultProps: {}
+};
+
+type ReviewProps = Omit<Review, "avatar">;
+
+const Review = ({ reviewText, name, title }: ReviewProps) => {
+  const styles = useStyleConfig("Review", {});
 
   return (
     <Box __css={styles}>
@@ -24,4 +35,7 @@ const ReviewNew = ({ reviewText, name, title }: ReviewNewProps) => {
   );
 };
 
-export { ReviewNew };
+const styles = reviewStyles;
+
+export { Review, reviewStyles, styles };
+export type { ReviewProps };
