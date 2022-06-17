@@ -1,7 +1,7 @@
 // 1. Import `extendTheme`
 import { extendTheme, ThemeConfig, TextProps } from "@chakra-ui/react";
 import { createBreakpoints, mode, Styles } from "@chakra-ui/theme-tools";
-import Review from "../components/reviews/ReviewStyle";
+// import Review from "../components/reviews/ReviewStyle";
 import Button from "../components/reviews/ButtonStyle";
 import {
   fonts,
@@ -163,7 +163,7 @@ const theme = extendTheme({
         }
       }
     },
-    Review,
+    // Review,
     Container: {
       variants: {
         reviews: {
