@@ -34,11 +34,11 @@ const socialLinks = [
     isLocal: false,
     linkText: "Github"
   },
-  // {
-  //   href: "https://github.com/rttnbrgr",
-  //   isLocal: false,
-  //   linkText: "Figma"
-  // },
+  {
+    href: "https://www.figma.com/@rttnbrgr",
+    isLocal: false,
+    linkText: "Figma"
+  },
   {
     href: "https://www.linkedin.com/in/nathan-rothenberger-11765b16/",
     isLocal: false,
