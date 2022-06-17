@@ -1,10 +1,9 @@
-const links = [
+const miscLinks = [
   //   {
   //     href: "https://www.rottenburger.com/",
   //     isLocal: false,
   //     linkText: "Portfolio"
   //   },
-
   {
     href: "/blog",
     isLocal: true,
@@ -26,14 +25,20 @@ const links = [
     href: "/theme",
     isLocal: true,
     linkText: "Theme"
-  },
+  }
+];
 
+const socialLinks = [
   {
     href: "https://github.com/rttnbrgr",
     isLocal: false,
     linkText: "Github"
   },
-
+  // {
+  //   href: "https://github.com/rttnbrgr",
+  //   isLocal: false,
+  //   linkText: "Figma"
+  // },
   {
     href: "https://www.linkedin.com/in/nathan-rothenberger-11765b16/",
     isLocal: false,
@@ -41,4 +46,15 @@ const links = [
   }
 ];
 
-export { links };
+const linkLists = [
+  {
+    title: "Links",
+    list: miscLinks
+  },
+  {
+    title: "Socials",
+    list: socialLinks
+  }
+];
+
+export { miscLinks, socialLinks, linkLists };

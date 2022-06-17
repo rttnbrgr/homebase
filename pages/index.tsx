@@ -2,7 +2,7 @@ import MetaPage from "../components/MetaPage";
 import { LayoutChakra } from "../components/layouts";
 import { Box, VStack, Text } from "@chakra-ui/react";
 import { MonoLinkList } from "../components/MonoLinkList";
-import { links } from "../lib/homepageLinks";
+import { linkLists } from "../lib/homepageLinks";
 import { MonoLink } from "../components/MonoLink";
 
 const rootStyles = {
@@ -46,12 +46,21 @@ const Index = ({}: Props) => {
           <MonoLinkList title="Links">
             {links.map(({ linkText, ...link }, i) => {
               return (
-                <MonoLink key={i} {...link}>
-                  {linkText}
-                </MonoLink>
+          <VStack spacing="1em" align="start">
+            {linkLists.map(({ title, list }, i) => {
+              return (
+                <MonoLinkList title={title}>
+                  {list.map(({ linkText, ...props }, i) => {
+                    return (
+                      <MonoLink key={i} {...props}>
+                        {linkText}
+                      </MonoLink>
+                    );
+                  })}
+                </MonoLinkList>
               );
             })}
-          </MonoLinkList>
+          </VStack>
         </VStack>
       </Box>
     </LayoutChakra>
