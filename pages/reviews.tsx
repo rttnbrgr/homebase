@@ -38,6 +38,6 @@ export default Reviews;
 
 export const getStaticProps = async () => {
   return {
-    props: {},
+    props: {}
   };
 };
