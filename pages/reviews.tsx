@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, SimpleGrid, VStack } from "@chakra-ui/react";
+import { Container, Flex, SimpleGrid, VStack } from "@chakra-ui/react";
 import reviews from "../lib/reviews";
 import { Review } from "../components/reviews";
 import Header from "../components/reviews/Header";
@@ -18,12 +18,14 @@ function Reviews({}: ReviewsProps) {
           {reviews.map((review, i) => {
             const { name, title, reviewText } = review;
             return (
-              <Review
-                name={name}
-                title={title}
-                reviewText={reviewText}
-                key={i}
-              />
+              <Flex align="center" justify="center" key={i}>
+                <Review
+                  name={name}
+                  title={title}
+                  reviewText={reviewText}
+                  key={i}
+                />
+              </Flex>
             );
           })}
         </SimpleGrid>
