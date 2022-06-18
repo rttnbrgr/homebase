@@ -38,7 +38,7 @@ const ThemeExplorer = ({}: Props) => {
                   </Text>
                   <Stack spacing="4">
                     {typeGroupX.map((style, j) => (
-                      <Text textStyle={style}>
+                      <Text textStyle={style} key={j}>
                         This is a {style.toLowerCase()}{" "}
                         {(typeGroup === "heading" ||
                           typeGroup === "paragraph") && <br />}{" "}
