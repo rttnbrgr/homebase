@@ -13,12 +13,12 @@ function Reviews({}: ReviewsProps) {
     <LayoutChakra>
       <MetaPage title="REVIEWS" />
       <Header />
-      <Container variant="none" pb="8">
+      <Container variant="none" py="8" px={{ base: 0, lg: 12 }}>
         <SimpleGrid columns={{ base: 1, lg: 2 }} spacing="12">
           {reviews.map((review, i) => {
             const { name, title, reviewText } = review;
             return (
-              <Flex align="center" justify="center" key={i}>
+              <Flex align="start" justify="center" key={i}>
                 <Review
                   name={name}
                   title={title}

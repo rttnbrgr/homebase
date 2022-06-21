@@ -5,7 +5,7 @@ import { Review } from "../../lib/reviews";
 
 const baseStyle: SystemStyleFunction = props => {
   return {
-    maxWidth: "400px"
+    maxWidth: { base: "400px", smedium: "600px" }
   };
 };
 
@@ -22,13 +22,16 @@ const Review = ({ reviewText, name, title }: ReviewProps) => {
 
   return (
     <Box __css={styles}>
-      <VStack spacing="3" align="start">
-        <Text textStyle="p3" fontStyle={"italic"}>
+      <VStack spacing={{ base: "3", smedium: "5" }} align="start">
+        <Text textStyle={{ base: "p3", smedium: "p2" }} fontStyle={"italic"}>
           {reviewText}
         </Text>
-        <VStack spacing="1" align="start">
-          <Text textStyle="h6">{name}</Text>
-          <Text textStyle="l2" fontSize="sm">
+        <VStack spacing={{ base: "1", smedium: "2" }} align="start">
+          <Text textStyle={{ base: "h6", smedium: "h5" }}>{name}</Text>
+          <Text
+            textStyle={{ base: "l2" }}
+            fontSize={{ base: "sm", smedium: "initial" }}
+          >
             {title}
           </Text>
         </VStack>
