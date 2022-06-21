@@ -1,8 +1,8 @@
 import dan from "../public/assets/reviews/dan.jpeg";
-import parker from "../public/assets/reviews/parker.jpeg";
-import parr from "../public/assets/reviews/parr.jpeg";
 import taylor from "../public/assets/reviews/taylor.jpeg";
 import joel from "../public/assets/reviews/joel.jpeg";
+import parker from "../public/assets/reviews/parker.jpeg";
+import parr from "../public/assets/reviews/parr.jpeg";
 import ivan from "../public/assets/reviews/ivan.jpeg";
 import duc from "../public/assets/reviews/duc.jpeg";
 import grace from "../public/assets/reviews/grace.jpeg";
@@ -21,6 +21,32 @@ export const reviewDan = {
   fullText: danFulltext,
   reviewText:
     "Product development can be messy, but I found I was excited any time I knew that Nathan was involved in a key discussion. He has a knack for clarifying key issues and decisions in a tactful and disarming way."
+};
+
+// Taylor
+const taylorFulltext =
+  "Nathan is dedicated, knowledgeable, and a pleasure to work with. His expertise in design systems, Sketch, and Abstract has helped me tremendously as a designer. Nathan was my go-to colleague for any design-related questions—whether it be Sketch plugin recommendations, best practices for Abstract, or ways to build Sketch symbols efficiently. His work on the UI Kit has helped me create workflows at a much faster pace while maintaining design consistency and ensuring accurate deliverables. All in all, Nathan is extremely resourceful and personable; he is one of the most insightful people I have ever worked with. I hope to be able to work with him again in the future.";
+
+export const reviewTaylor = {
+  name: "Taylor Yeerong",
+  title: "Visual Designer, Sprinklr",
+  avatar: taylor,
+  fullText: taylorFulltext,
+  reviewText:
+    "Nathan is dedicated, knowledgeable, and a pleasure to work with. His expertise in design systems, Sketch, and Abstract has helped me tremendously as a designer."
+};
+
+// Joel
+const joelFulltext =
+  "I have worked and collaborated with Nathan for a few years now and it has been a pure delight. \n There are so many ways that he has improved our teams' experience. His research in design systems and front end engineering systems help our team create maintainable, scalable, consistent, and highly performant libraries. His work connects design and engineering teams in a way that improves communications and consistency in user experience. Through this process, our developer experience was greatly improved as well. Nathan has been willing to learn and teach about the design system space at large, leading our team to better understand the \"why\" and \"how\" for our own system. He's also turned us on to industry podcasts, Gatsby, Styled Components, Styled System (and systems with similar specs/theories.) \n It's a huge asset to have someone like Nathan on your team who plays multiple roles in discussions and thinks objectively to help identify potential pitfalls and areas of improvement. \n I also appreciate the humor and playfulness he brings to situations that are ordinarily dull or tense; how he helps me (and others) meet and interact with others at networking events and conferences, and gives space for voices that aren't normally heard in conversations. \n Clearly, I highly recommend Nathan as he is one of the best coworkers I've ever had. I'm excited to see him continue to grow and look forward to learning more from him along the way.";
+
+export const reviewJoel = {
+  name: "Joel Turner",
+  title: "Product Engineer, Sprinklr",
+  avatar: joel,
+  fullText: joelFulltext,
+  reviewText:
+    "It's a huge asset to have someone like Nathan on your team who plays multiple roles in discussions and thinks objectively to help identify potential pitfalls and areas of improvement"
 };
 
 // Parker Gindele
@@ -48,32 +74,6 @@ export const reviewParr = {
   fullText: parrFulltext,
   reviewText:
     "He has contributed extreme value while on the Sprinklr Product Design team... Because of his work we have saved countless hours of design & dev work."
-};
-
-// Taylor
-const taylorFulltext =
-  "Nathan is dedicated, knowledgeable, and a pleasure to work with. His expertise in design systems, Sketch, and Abstract has helped me tremendously as a designer. Nathan was my go-to colleague for any design-related questions—whether it be Sketch plugin recommendations, best practices for Abstract, or ways to build Sketch symbols efficiently. His work on the UI Kit has helped me create workflows at a much faster pace while maintaining design consistency and ensuring accurate deliverables. All in all, Nathan is extremely resourceful and personable; he is one of the most insightful people I have ever worked with. I hope to be able to work with him again in the future.";
-
-export const reviewTaylor = {
-  name: "Taylor Yeerong",
-  title: "Visual Designer, Sprinklr",
-  avatar: taylor,
-  fullText: taylorFulltext,
-  reviewText:
-    "Nathan is dedicated, knowledgeable, and a pleasure to work with. His expertise in design systems, Sketch, and Abstract has helped me tremendously as a designer."
-};
-
-// Joel
-const joelFulltext =
-  "I have worked and collaborated with Nathan for a few years now and it has been a pure delight. \n There are so many ways that he has improved our teams' experience. His research in design systems and front end engineering systems help our team create maintainable, scalable, consistent, and highly performant libraries. His work connects design and engineering teams in a way that improves communications and consistency in user experience. Through this process, our developer experience was greatly improved as well. Nathan has been willing to learn and teach about the design system space at large, leading our team to better understand the \"why\" and \"how\" for our own system. He's also turned us on to industry podcasts, Gatsby, Styled Components, Styled System (and systems with similar specs/theories.) \n It's a huge asset to have someone like Nathan on your team who plays multiple roles in discussions and thinks objectively to help identify potential pitfalls and areas of improvement. \n I also appreciate the humor and playfulness he brings to situations that are ordinarily dull or tense; how he helps me (and others) meet and interact with others at networking events and conferences, and gives space for voices that aren't normally heard in conversations. \n Clearly, I highly recommend Nathan as he is one of the best coworkers I've ever had. I'm excited to see him continue to grow and look forward to learning more from him along the way.";
-
-export const reviewJoel = {
-  name: "Joel Turner",
-  title: "Product Engineer, Sprinklr",
-  avatar: joel,
-  fullText: joelFulltext,
-  reviewText:
-    "It's a huge asset to have someone like Nathan on your team who plays multiple roles in discussions and thinks objectively to help identify potential pitfalls and areas of improvement"
 };
 
 const ducFulltext =
@@ -146,10 +146,10 @@ export type Review = {
 
 const reviews: Array<Review> = [
   reviewDan,
-  reviewParker,
-  reviewParr,
   reviewTaylor,
   reviewJoel,
+  reviewParker,
+  reviewParr,
   reviewDuc,
   reviewIvan,
   reviewDavid,

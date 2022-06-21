@@ -1,34 +1,34 @@
 import React from "react";
-import Head from "next/head";
-import { Container } from "@chakra-ui/react";
+import { Container, Flex, SimpleGrid, VStack } from "@chakra-ui/react";
 import reviews from "../lib/reviews";
 import { Review } from "../components/reviews";
 import Header from "../components/reviews/Header";
 import { LayoutChakra } from "../components/layouts";
 import MetaPage from "../components/MetaPage";
 
-type ReviewProps = {};
+type ReviewsProps = {};
 
-function Reviews({}: ReviewProps) {
+function Reviews({}: ReviewsProps) {
   return (
     <LayoutChakra>
       <MetaPage title="REVIEWS" />
       <Header />
-      <Container variant="review" pb="8">
-        {reviews.map((review, i) => {
-          const { name, title, avatar, reviewText } = review;
-          const reverseVal = !!(i % 2);
-          return (
-            <Review
-              name={name}
-              title={title}
-              avatar={avatar}
-              reverse={reverseVal}
-              reviewText={reviewText}
-              key={i}
-            />
-          );
-        })}
+      <Container variant="none" py="8" px={{ base: 0, lg: 12 }}>
+        <SimpleGrid columns={{ base: 1, lg: 2 }} spacing="12">
+          {reviews.map((review, i) => {
+            const { name, title, reviewText } = review;
+            return (
+              <Flex align="start" justify="center" key={i}>
+                <Review
+                  name={name}
+                  title={title}
+                  reviewText={reviewText}
+                  key={i}
+                />
+              </Flex>
+            );
+          })}
+        </SimpleGrid>
       </Container>
     </LayoutChakra>
   );
@@ -38,6 +38,6 @@ export default Reviews;
 
 export const getStaticProps = async () => {
   return {
-    props: {},
+    props: {}
   };
 };

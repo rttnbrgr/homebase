@@ -1,8 +1,15 @@
 // 1. Import `extendTheme`
 import { extendTheme, ThemeConfig, TextProps } from "@chakra-ui/react";
 import { createBreakpoints, mode, Styles } from "@chakra-ui/theme-tools";
-import Review from "../components/reviews/ReviewStyle";
+import { styles as Review } from "../components/reviews";
 import Button from "../components/reviews/ButtonStyle";
+import {
+  fonts,
+  fontSizes,
+  baseTextStyles,
+  rootIndexTextStyles,
+  textStyles
+} from "./typography";
 
 const config: ThemeConfig = {
   initialColorMode: "light",
@@ -18,34 +25,34 @@ const breakpoints = createBreakpoints({
   "2xl": "90em" // 1440
 });
 
-const fonts = {
-  // default: '"Times New Roman", "Helvetica", sans-serif',
-  default: '"Helvetica Neue", sans-serif',
-  debug: "monospace"
-};
+// const fonts = {
+//   // default: '"Times New Roman", "Helvetica", sans-serif',
+//   default: '"Helvetica Neue", sans-serif',
+//   debug: "monospace"
+// };
 
-const baseTextStyles: TextProps = {
-  margin: 0,
-  padding: 0,
-  lineHeight: 1,
-  fontFamily: fonts.default,
-  fontWeight: 700
-};
+// const baseTextStyles: TextProps = {
+//   margin: 0,
+//   padding: 0,
+//   lineHeight: 1,
+//   fontFamily: fonts.default,
+//   fontWeight: 700
+// };
 
-const rootIndexTextStyles = {
-  fontSize: {
-    // base: "1rem"
-    base: "1.5rem",
-    smedium: "2.5rem",
-    "2xl": "3.25rem"
-  },
-  fontFamily: "default",
-  color: "onBg",
-  lineHeight: "1.2",
-  fontWeight: 700,
-  fontStyle: "normal",
-  letterSpacing: "-0.7px"
-};
+// const rootIndexTextStyles = {
+//   fontSize: {
+//     // base: "1rem"
+//     base: "1.5rem",
+//     smedium: "2.5rem",
+//     "2xl": "3.25rem"
+//   },
+//   fontFamily: "default",
+//   color: "onBg",
+//   lineHeight: "1.2",
+//   fontWeight: 700,
+//   fontStyle: "normal",
+//   letterSpacing: "-0.7px"
+// };
 
 const styles: Styles = {
   global: props => ({
@@ -76,6 +83,7 @@ const theme = extendTheme({
       bg: {
         base: "red.500",
         sm: "green.500",
+        smedium: "teal.500",
         md: "purple.500",
         lg: "yellow.500",
         xl: "pink.500"
@@ -110,7 +118,9 @@ const theme = extendTheme({
     }
   },
   fonts,
+  fontSizes,
   textStyles: {
+    ...textStyles,
     review: {
       header: {
         ...baseTextStyles,
@@ -159,6 +169,9 @@ const theme = extendTheme({
       variants: {
         reviews: {
           maxW: "500px"
+        },
+        none: {
+          maxW: "none"
         }
       }
     }
