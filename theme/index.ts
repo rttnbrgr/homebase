@@ -83,6 +83,7 @@ const theme = extendTheme({
       bg: {
         base: "red.500",
         sm: "green.500",
+        smedium: "teal.500",
         md: "purple.500",
         lg: "yellow.500",
         xl: "pink.500"
