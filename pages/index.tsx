@@ -12,7 +12,9 @@ const rootStyles = {
   // Text styles
   textStyle: "homeRoot",
   // Layout Styles
-  padding: "1.5em",
+  padding: "1.5rem",
+  pt: "2rem",
+  pb: "4rem",
   display: "flex",
   alignItems: "center",
   maxWidth: "30em"
