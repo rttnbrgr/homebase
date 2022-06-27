@@ -1,5 +1,5 @@
 import Container from "./container";
-import { REPO_PATH } from "../lib/constants";
+import { REPO_PATH } from "../../lib/constants";
 
 const Footer = () => {
   return (
