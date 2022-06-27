@@ -1,5 +1,5 @@
-import Alert from "../alert";
-import Footer from "../footer";
+import Alert from "../blog/alert";
+import Footer from "../blog/footer";
 import Meta from "../meta";
 
 type Props = {
@@ -7,7 +7,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-const LayoutDefault = ({ preview, children }: Props) => {
+const LayoutBlog = ({ preview, children }: Props) => {
   return (
     <>
       <Meta />
@@ -20,4 +20,4 @@ const LayoutDefault = ({ preview, children }: Props) => {
   );
 };
 
-export { LayoutDefault };
+export { LayoutBlog };

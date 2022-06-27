@@ -1,2 +1,2 @@
-export * from "./LayoutDefault";
+export * from "./LayoutBlog";
 export * from "./LayoutChakra";
