@@ -1,13 +1,9 @@
-import Container from "../components/container";
+import Container from "../components/blog/container";
 import MoreStories from "../components/more-stories";
-import HeroPost from "../components/hero-post";
-import Intro from "../components/intro";
-import { LayoutDefault } from "../components/layouts/LayoutDefault";
+import { LayoutBlog } from "../components/layouts/LayoutBlog";
 import { getAllPosts } from "../lib/api";
-import Head from "next/head";
-import { CMS_NAME } from "../lib/constants";
 import Post from "../types/post";
-import Header from "../components/header";
+import Header from "../components/blog/header";
 import MetaPage from "../components/MetaPage";
 
 type Props = {
@@ -19,13 +15,13 @@ const Blog = ({ allPosts }: Props) => {
   const morePosts = allPosts.slice(1);
   return (
     <>
-      <LayoutDefault>
+      <LayoutBlog>
         <MetaPage title="Blog" />
         <Container>
           <Header />
           {allPosts.length > 0 && <MoreStories posts={allPosts} />}
         </Container>
-      </LayoutDefault>
+      </LayoutBlog>
     </>
   );
 };
@@ -39,10 +35,10 @@ export const getStaticProps = async () => {
     "slug",
     "author",
     "coverImage",
-    "excerpt",
+    "excerpt"
   ]);
 
   return {
-    props: { allPosts },
+    props: { allPosts }
   };
 };
