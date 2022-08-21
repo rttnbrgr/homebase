@@ -12,7 +12,7 @@ const MoreStories = ({ posts }: Props) => {
         Posts
       </h2>
       <div className="grid grid-cols-1 gap-y-12 mb-32">
-        {posts.map((post) => (
+        {posts.map(post => (
           <PostPreview
             key={post.slug}
             title={post.title}

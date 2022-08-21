@@ -7,7 +7,7 @@ type MetaPageProps = {
 
 const MetaPage = ({
   title = "Page Name",
-  titleSuffix = true,
+  titleSuffix = true
 }: MetaPageProps) => {
   return (
     <Head>

@@ -7,17 +7,17 @@ import {
   Flex,
   useColorMode,
   Button,
-  TextProps,
+  TextProps
 } from "@chakra-ui/react";
 
 const headerStyles: BoxProps = {
   justifyContent: {
     base: "space-between",
-    md: "center",
+    md: "center"
   },
   alignItems: "center",
   px: 4,
-  py: { base: 2, md: 4 },
+  py: { base: 2, md: 4 }
 };
 
 const headerTextStyles: TextProps = {
@@ -25,7 +25,7 @@ const headerTextStyles: TextProps = {
   textAlign: "center",
   lineHeight: "1",
   px: { base: 0, sm: 4, md: 8 },
-  textStyle: "review.header",
+  textStyle: "review.header"
 };
 
 type HeaderProps = {
@@ -49,7 +49,7 @@ const Header = ({ title = "Testimonials" }: HeaderProps) => {
 };
 
 Header.defaultProps = {
-  title: "Testimonials",
+  title: "Testimonials"
 };
 
 export default Header;

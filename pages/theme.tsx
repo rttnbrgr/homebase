@@ -32,8 +32,7 @@ const ThemeExplorer = ({}: Props) => {
                     color="white"
                     display="inline-block"
                     px="1"
-                    mb="4"
-                  >
+                    mb="4">
                     {typeGroup}
                   </Text>
                   <Stack spacing="4">

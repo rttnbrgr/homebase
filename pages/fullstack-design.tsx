@@ -29,6 +29,6 @@ export default FullstackDesign;
 
 export const getStaticProps = async () => {
   return {
-    props: {},
+    props: {}
   };
 };

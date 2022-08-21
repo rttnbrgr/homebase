@@ -30,8 +30,7 @@ const Review = ({ reviewText, name, title }: ReviewProps) => {
           <Text textStyle={{ base: "h6", smedium: "h5" }}>{name}</Text>
           <Text
             textStyle={{ base: "l2" }}
-            fontSize={{ base: "sm", smedium: "initial" }}
-          >
+            fontSize={{ base: "sm", smedium: "initial" }}>
             {title}
           </Text>
         </VStack>
