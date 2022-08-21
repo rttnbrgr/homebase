@@ -82,6 +82,13 @@ const headings = {
     lineHeight: "2rem",
     letterSpacing: "-0.015em"
   },
+  // edit for the blog
+  h4Fork: {
+    fontSize: ["32px"],
+    fontWeight: "400",
+    lineHeight: "36px",
+    letterSpacing: "-0.015em"
+  },
 
   // 20/24
   h5: {

@@ -1,10 +1,10 @@
-import Container from "../components/blog/container";
-import MoreStories from "../components/more-stories";
-import { LayoutBlog } from "../components/layouts/LayoutBlog";
-import { getAllPosts } from "../lib/api";
-import Post from "../types/post";
-import Header from "../components/blog/header";
-import MetaPage from "../components/MetaPage";
+import Container from "../../components/blog/container";
+import MoreStories from "../../components/more-stories";
+import { LayoutBlog } from "../../components/layouts/LayoutBlog";
+import { getAllPosts } from "../../lib/api";
+import Post from "../../types/post";
+import Header from "../../components/blog/header";
+import MetaPage from "../../components/MetaPage";
 
 type Props = {
   allPosts: Post[];
