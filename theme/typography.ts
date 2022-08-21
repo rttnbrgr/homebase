@@ -33,7 +33,6 @@ const rootIndexTextStyles = {
     "2xl": "3.25rem"
   },
   fontFamily: "default",
-  color: "onBg",
   lineHeight: "1.2",
   fontWeight: 700,
   fontStyle: "normal",
