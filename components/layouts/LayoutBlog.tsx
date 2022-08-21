@@ -1,6 +1,6 @@
 import Alert from "../blog/alert";
-import Footer from "../blog/footer";
-import Meta from "../meta";
+import Footer from "../Footer";
+import Meta from "../MetaRoot";
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from "../../theme";
 

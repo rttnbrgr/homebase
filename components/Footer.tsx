@@ -1,4 +1,4 @@
-import { REPO_PATH } from "../../lib/constants";
+import { REPO_PATH } from "../lib/constants";
 import {
   Box,
   Container as ChakraContainer,
