@@ -25,7 +25,7 @@ const PostPreview = ({
     <VStack spacing="5" alignItems="left">
       <VStack spacing="1" alignItems="left">
         <Text textStyle="h4Fork">
-          <NextLink as={`/posts/${slug}`} href="/posts/[slug]">
+          <NextLink as={`/blog/${slug}`} href="/blog/[slug]">
             <ChakraLink layerStyle="resetLink">{title}</ChakraLink>
           </NextLink>
         </Text>
