@@ -17,9 +17,9 @@ const LayoutBlog = ({ preview, children }: Props) => {
         <div className="min-h-screen">
           <Alert preview={preview} />
           <main>{children}</main>
+          <Footer />
         </div>
       </ChakraProvider>
-      <Footer />
     </>
   );
 };
