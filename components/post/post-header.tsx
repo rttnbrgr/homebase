@@ -1,6 +1,7 @@
 import DateFormatter from "../date-formatter";
 import { PostTitle } from "./post-title";
 import Author from "../../types/author";
+import { Text, VStack } from "@chakra-ui/react";
 
 type Props = {
   title: string;
@@ -11,14 +12,12 @@ type Props = {
 
 const PostHeader = ({ title, coverImage, date, author }: Props) => {
   return (
-    <div className="max-w-2xl mx-auto">
-      POST HEADER POST HEADER POST HEADER
+    <VStack bg="red500" alignItems="start" spacing="2">
       <PostTitle>{title}</PostTitle>
-      <div className="mb-6 text-lg">
+      <Text textStyle="p3">
         <DateFormatter dateString={date} />
-      </div>
-      POST HEADER POST HEADER POST HEADER
-    </div>
+      </Text>
+    </VStack>
   );
 };
 

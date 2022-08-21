@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { Text } from "@chakra-ui/react";
 
 type Props = {
   children?: ReactNode;
@@ -6,9 +7,9 @@ type Props = {
 
 const PostTitle = ({ children }: Props) => {
   return (
-    <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-tight md:leading-none mb-4 text-left">
+    <Text as="h1" textStyle={{ base: "h2", md: "h1", lg: "jumbo" }}>
       {children}
-    </h1>
+    </Text>
   );
 };
 

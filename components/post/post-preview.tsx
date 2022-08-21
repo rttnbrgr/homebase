@@ -1,6 +1,8 @@
 import DateFormatter from "../date-formatter";
-import Link from "next/link";
 import Author from "../../types/author";
+import { Text, VStack } from "@chakra-ui/react";
+import NextLink from "next/link";
+import { Link as ChakraLink } from "@chakra-ui/react";
 
 type Props = {
   title: string;
@@ -20,17 +22,19 @@ const PostPreview = ({
   slug
 }: Props) => {
   return (
-    <div>
-      <h3 className="text-3xl mb-1 leading-snug">
-        <Link as={`/posts/${slug}`} href="/posts/[slug]">
-          <a className="hover:underline">{title}</a>
-        </Link>
-      </h3>
-      <div className="text-lg mb-4">
-        <DateFormatter dateString={date} />
-      </div>
-      <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-    </div>
+    <VStack spacing="5" alignItems="left">
+      <VStack spacing="1" alignItems="left">
+        <Text textStyle="h4Fork">
+          <NextLink as={`/posts/${slug}`} href="/posts/[slug]">
+            <ChakraLink layerStyle="resetLink">{title}</ChakraLink>
+          </NextLink>
+        </Text>
+        <Text textStyle="p2">
+          <DateFormatter dateString={date} />
+        </Text>
+      </VStack>
+      <Text textStyle="p2">{excerpt}</Text>
+    </VStack>
   );
 };
 
