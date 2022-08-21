@@ -78,6 +78,9 @@ const theme = extendTheme({
     onBg: "#0f1014",
     debugColor: "blue"
   },
+  sizes: {
+    "2xl": "42rem"
+  },
   layerStyles: {
     debug: {
       bg: {
