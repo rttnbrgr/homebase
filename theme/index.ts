@@ -169,7 +169,15 @@ const theme = extendTheme({
     },
     Review,
     Container: {
+      baseStyle: {
+        // border: "1px solid green"
+      },
       variants: {
+        refactor: {
+          textStyle: "homeRoot",
+          px: "1.5rem",
+          maxWidth: "30em"
+        },
         reviews: {
           maxW: "500px"
         },
