@@ -1,4 +1,4 @@
-import markdownStyles from "./markdown-styles.module.css";
+import markdownStyles from "../markdown-styles.module.css";
 
 type Props = {
   content: string;
@@ -15,4 +15,4 @@ const PostBody = ({ content }: Props) => {
   );
 };
 
-export default PostBody;
+export { PostBody };

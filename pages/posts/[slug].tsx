@@ -1,12 +1,11 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import Container from "../../components/blog/container";
-import PostBody from "../../components/post-body";
 import Header from "../../components/blog/header";
-import PostHeader from "../../components/post-header";
+import { PostHeader } from "../../components/post";
 import { LayoutBlog } from "../../components/layouts/LayoutBlog";
 import { getPostBySlug, getAllPosts } from "../../lib/api";
-import PostTitle from "../../components/post-title";
+import { PostTitle, PostBody } from "../../components/post";
 import Head from "next/head";
 import { CMS_NAME } from "../../lib/constants";
 import markdownToHtml from "../../lib/markdownToHtml";

@@ -12,4 +12,4 @@ const PostTitle = ({ children }: Props) => {
   );
 };
 
-export default PostTitle;
+export { PostTitle };

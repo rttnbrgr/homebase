@@ -1,6 +1,6 @@
-import DateFormatter from "./date-formatter";
-import PostTitle from "./post-title";
-import Author from "../types/author";
+import DateFormatter from "../date-formatter";
+import { PostTitle } from "./post-title";
+import Author from "../../types/author";
 
 type Props = {
   title: string;
@@ -22,4 +22,4 @@ const PostHeader = ({ title, coverImage, date, author }: Props) => {
   );
 };
 
-export default PostHeader;
+export { PostHeader };
