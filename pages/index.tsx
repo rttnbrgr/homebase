@@ -1,6 +1,12 @@
 import MetaPage from "../components/MetaPage";
 import { LayoutChakra } from "../components/layouts";
-import { Box, VStack, Text, Link as ChakraLink } from "@chakra-ui/react";
+import {
+  Box,
+  VStack,
+  Text,
+  Link as ChakraLink,
+  Container
+} from "@chakra-ui/react";
 import NextLink from "next/link";
 import { MonoLinkList } from "../components/MonoLinkList";
 import { linkLists } from "../lib/homepageLinks";
@@ -9,15 +15,8 @@ import { Review } from "../components/reviews";
 import reviews from "../lib/reviews";
 
 const rootStyles = {
-  // Text styles
-  textStyle: "homeRoot",
-  // Layout Styles
-  padding: "1.5rem",
   pt: "2rem",
-  pb: "4rem",
-  display: "flex",
-  alignItems: "center",
-  maxWidth: "30em"
+  pb: "4rem"
 };
 
 type Props = {};
@@ -26,12 +25,13 @@ const Index = ({}: Props) => {
   return (
     <LayoutChakra>
       <MetaPage title="R T T N B R G R | 🤢🍔" titleSuffix={false} />
-      <Box {...rootStyles} className="rootBox">
+      <Container variant="refactor" {...rootStyles}>
         <VStack spacing="2em" align="start">
           <Text as="h1" textStyle="homeHeader">
             @rttnbrgr
           </Text>
 
+          {/* Bio Section */}
           <VStack spacing="1em" align="start">
             <Text>👋 Hi.</Text>
             <Text>My name is Nathan Mateo Rothenberger.</Text>
@@ -47,7 +47,7 @@ const Index = ({}: Props) => {
             </Text>
             <Text>Take care ✌️</Text>
           </VStack>
-
+          {/* Reviews Section */}
           <Box as="section">
             <Text as="h2" textStyle="homeHeader">
               Reviews
@@ -72,7 +72,7 @@ const Index = ({}: Props) => {
               </NextLink>
             </VStack>
           </Box>
-
+          {/* Links */}
           <VStack spacing="1em" align="start">
             {linkLists.map(({ title, list }, i) => {
               return (
@@ -89,7 +89,7 @@ const Index = ({}: Props) => {
             })}
           </VStack>
         </VStack>
-      </Box>
+      </Container>
     </LayoutChakra>
   );
 };

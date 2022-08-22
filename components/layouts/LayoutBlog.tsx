@@ -1,6 +1,6 @@
 import Footer from "../Footer";
 import Meta from "../MetaRoot";
-import { ChakraProvider } from "@chakra-ui/react";
+import { Box, ChakraProvider } from "@chakra-ui/react";
 import theme from "../../theme";
 
 type Props = {
@@ -13,10 +13,13 @@ const LayoutBlog = ({ preview, children }: Props) => {
     <>
       <Meta />
       <ChakraProvider theme={theme}>
-        <div className="min-h-screen">
-          <main>{children}</main>
+        <Box minH="100vh" boxShadow="inset 0 0 0 4px green">
+          <main>
+            <Footer />
+            {children}
+          </main>
           <Footer />
-        </div>
+        </Box>
       </ChakraProvider>
     </>
   );

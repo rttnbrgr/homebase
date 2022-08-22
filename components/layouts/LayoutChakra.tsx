@@ -1,4 +1,4 @@
-import { ChakraProvider } from "@chakra-ui/react";
+import { Box, ChakraProvider } from "@chakra-ui/react";
 import React from "react";
 import Meta from "../MetaRoot";
 import theme from "../../theme";
@@ -13,10 +13,13 @@ const LayoutChakra = ({ children }: LayoutProps) => {
     <>
       <Meta />
       <ChakraProvider theme={theme}>
-        <div className="min-h-screen flex justify-center items-start">
-          <main>{children}</main>
-        </div>
-        <Footer />
+        <Box minH="100vh" boxShadow="inset 0 0 0 4px pink">
+          <main>
+            <Footer />
+            {children}
+          </main>
+          <Footer />
+        </Box>
       </ChakraProvider>
     </>
   );

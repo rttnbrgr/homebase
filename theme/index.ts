@@ -174,7 +174,7 @@ const theme = extendTheme({
       },
       variants: {
         refactor: {
-          textStyle: "homeRoot",
+          textStyle: "homeRoot", // the width and padding are based on this
           px: "1.5rem",
           maxWidth: "30em"
         },
