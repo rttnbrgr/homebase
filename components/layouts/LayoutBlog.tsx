@@ -1,4 +1,3 @@
-import Alert from "../blog/alert";
 import Footer from "../Footer";
 import Meta from "../MetaRoot";
 import { ChakraProvider } from "@chakra-ui/react";
@@ -15,7 +14,6 @@ const LayoutBlog = ({ preview, children }: Props) => {
       <Meta />
       <ChakraProvider theme={theme}>
         <div className="min-h-screen">
-          <Alert preview={preview} />
           <main>{children}</main>
           <Footer />
         </div>
