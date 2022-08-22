@@ -1,4 +1,4 @@
-import { ProjectProps } from "./../components/fullstackDesign/Project";
+import { ProjectProps } from "../components/Project";
 
 const ProjectGradientPrototype: ProjectProps = {
   title: "Gradient Prototype",

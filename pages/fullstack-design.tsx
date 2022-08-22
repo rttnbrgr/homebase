@@ -4,7 +4,7 @@ import { Container, VStack } from "@chakra-ui/react";
 import { projects } from "../lib/fullstackDesign";
 import Header from "../components/reviews/Header";
 import { Layout } from "../components/Layout";
-import { Project } from "../components/fullstackDesign/Project";
+import { Project } from "../components/Project";
 import MetaPage from "../components/MetaPage";
 
 type ReviewProps = {};

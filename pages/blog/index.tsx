@@ -1,6 +1,6 @@
 import Container from "../../components/blog/container";
 import MoreStories from "../../components/more-stories";
-import { Layout } from "../../components/layouts";
+import { Layout } from "../../components/Layout";
 import { getAllPosts } from "../../lib/api";
 import Post from "../../types/post";
 import Header from "../../components/blog/header";
