@@ -14,10 +14,7 @@ const LayoutChakra = ({ children }: LayoutProps) => {
       <Meta />
       <ChakraProvider theme={theme}>
         <Box minH="100vh" boxShadow="inset 0 0 0 4px pink">
-          <main>
-            <Footer />
-            {children}
-          </main>
+          <main>{children}</main>
           <Footer />
         </Box>
       </ChakraProvider>
