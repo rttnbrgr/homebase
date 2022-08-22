@@ -1,10 +1,9 @@
-import Container from "../../components/blog/container";
 import MoreStories from "../../components/more-stories";
 import { Layout } from "../../components/Layout";
 import { getAllPosts } from "../../lib/api";
 import Post from "../../types/post";
-import Header from "../../components/blog/header";
 import MetaPage from "../../components/MetaPage";
+import { Box, Container } from "@chakra-ui/react";
 
 type Props = {
   allPosts: Post[];
@@ -17,9 +16,10 @@ const Blog = ({ allPosts }: Props) => {
     <>
       <Layout title="Blog">
         <MetaPage title="Blog" />
-        <Container>
-          <Header />
-          {allPosts.length > 0 && <MoreStories posts={allPosts} />}
+        <Container variant="refactor">
+          <Box textStyle="resetRefactor">
+            {allPosts.length > 0 && <MoreStories posts={allPosts} />}
+          </Box>
         </Container>
       </Layout>
     </>

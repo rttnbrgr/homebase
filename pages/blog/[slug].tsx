@@ -1,7 +1,5 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
-import Container from "../../components/blog/container";
-import Header from "../../components/blog/header";
 import { PostHeader } from "../../components/post";
 import { Layout } from "../../components/Layout";
 import { getPostBySlug, getAllPosts } from "../../lib/api";
@@ -10,7 +8,7 @@ import Head from "next/head";
 import { CMS_NAME } from "../../lib/constants";
 import markdownToHtml from "../../lib/markdownToHtml";
 import PostType from "../../types/post";
-import { Box } from "@chakra-ui/react";
+import { Box, Container } from "@chakra-ui/react";
 
 type Props = {
   post: PostType;
@@ -24,8 +22,7 @@ const Post = ({ post, morePosts }: Props) => {
   }
   return (
     <Layout title="Blog">
-      <Container>
-        <Header />
+      <Container maxW="800px" variant="refactor">
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
@@ -36,7 +33,12 @@ const Post = ({ post, morePosts }: Props) => {
               </title>
               <meta property="og:image" content={post.ogImage.url} />
             </Head>
-            <Box as="article" mb="32" maxW="2xl" mx="auto">
+            <Box
+              as="article"
+              mb="32"
+              maxW="2xl"
+              mx="auto"
+              textStyle="resetRefactor">
               <PostHeader
                 title={post.title}
                 coverImage={post.coverImage}

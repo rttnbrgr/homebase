@@ -39,6 +39,13 @@ const rootIndexTextStyles = {
   letterSpacing: "-0.7px"
 };
 
+// reset from the text styles on the refactor container
+const resetTextStyles = {
+  fontWeight: "400",
+  fontSize: "1rem",
+  letterSpacing: "initial"
+};
+
 const headings = {
   // 88/104
   jumbo: {
@@ -185,7 +192,8 @@ const textStyles: SystemStyleObjectRecord = {
   ...headings,
   ...paragraphs,
   ...labels,
-  ...buttons
+  ...buttons,
+  resetRefactor: resetTextStyles
 };
 
 export { fonts, fontSizes, baseTextStyles, rootIndexTextStyles, textStyles };
