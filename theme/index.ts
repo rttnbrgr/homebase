@@ -176,9 +176,11 @@ const theme = extendTheme({
       },
       variants: {
         refactor: {
-          textStyle: "homeRoot", // the width and padding are based on this
+          // the width and padding are based on this
+          textStyle: "homeRoot",
           px: "1.5rem",
           maxWidth: "30em"
+          // boxShadow: "inset 0 0 0 4px green"
         },
         reviews: {
           maxW: "500px"

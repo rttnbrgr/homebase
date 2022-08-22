@@ -47,7 +47,7 @@ const Header = ({ title, isHome = false }: HeaderProps) => {
 
   return (
     <>
-      <Box as="header" layerStyle="debug">
+      <Box as="header" layerStyle="">
         <ChakraContainer variant="refactor" py="4">
           <Flex justifyContent="space-between" alignItems="center">
             {/* Breadcrumb */}

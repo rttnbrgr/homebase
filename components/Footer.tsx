@@ -10,7 +10,7 @@ import NextLink from "next/link";
 const Footer = () => {
   return (
     <>
-      <Box as="footer" layerStyle="debug" py="8">
+      <Box as="footer" layerStyle="" py="8">
         <ChakraContainer bg="transparent" variant="refactor">
           <Text as="h3">Statically Generated with Next.js.</Text>
           <Text>
