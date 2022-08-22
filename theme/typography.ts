@@ -169,6 +169,12 @@ const buttons = {
     fontSize: ["md"],
     fontWeight: "400",
     lineHeight: "1"
+  },
+  bOutline: {
+    fontWeight: 700,
+    fontSize: "xs",
+    lineHeight: "1",
+    textTransform: "uppercase"
   }
 };
 

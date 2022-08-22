@@ -159,6 +159,8 @@ const theme = extendTheme({
     Link: {
       variants: {
         reviewButton: {
+          fontSize: "xs", // copied from button,
+          // fontSize: "inherit",
           textDecoration: "none",
           lineHeight: 1,
           _hover: {
