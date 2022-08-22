@@ -9,15 +9,16 @@ type LayoutProps = {
   children: React.ReactNode;
   title: string;
   hideHeader?: boolean;
+  isHome?: boolean;
 };
 
-const Layout = ({ children, title, hideHeader }: LayoutProps) => {
+const Layout = ({ children, title, hideHeader, isHome }: LayoutProps) => {
   return (
     <>
       <Meta />
       <ChakraProvider theme={theme}>
         <Box minH="100vh" boxShadow="inset 0 0 0 4px pink">
-          {!hideHeader && <Header title={title} />}
+          {!hideHeader && <Header title={title} isHome={isHome} />}
           <main>{children}</main>
           <Footer />
         </Box>

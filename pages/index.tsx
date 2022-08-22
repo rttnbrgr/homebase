@@ -23,14 +23,10 @@ type Props = {};
 
 const Index = ({}: Props) => {
   return (
-    <Layout hideHeader title="home">
+    <Layout isHome>
       <MetaPage title="R T T N B R G R | 🤢🍔" titleSuffix={false} />
       <Container variant="refactor" {...rootStyles}>
         <VStack spacing="2em" align="start">
-          <Text as="h1" textStyle="homeHeader">
-            @rttnbrgr
-          </Text>
-
           {/* Bio Section */}
           <VStack spacing="1em" align="start">
             <Text>👋 Hi.</Text>
