@@ -10,9 +10,8 @@ type ReviewsProps = {};
 
 function Reviews({}: ReviewsProps) {
   return (
-    <Layout>
+    <Layout title="Testimonials">
       <MetaPage title="REVIEWS" />
-      <Header />
       <Container variant="none" py="8" px={{ base: 0, lg: 12 }}>
         <SimpleGrid columns={{ base: 1, lg: 2 }} spacing="12">
           {reviews.map((review, i) => {

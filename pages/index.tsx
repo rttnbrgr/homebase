@@ -23,7 +23,7 @@ type Props = {};
 
 const Index = ({}: Props) => {
   return (
-    <Layout>
+    <Layout hideHeader title="home">
       <MetaPage title="R T T N B R G R | 🤢🍔" titleSuffix={false} />
       <Container variant="refactor" {...rootStyles}>
         <VStack spacing="2em" align="start">

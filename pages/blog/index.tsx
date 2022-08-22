@@ -15,7 +15,7 @@ const Blog = ({ allPosts }: Props) => {
   const morePosts = allPosts.slice(1);
   return (
     <>
-      <Layout>
+      <Layout title="Blog">
         <MetaPage title="Blog" />
         <Container>
           <Header />

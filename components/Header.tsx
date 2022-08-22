@@ -32,7 +32,7 @@ type HeaderProps = {
   title: string;
 };
 
-const Header = ({ title = "Testimonials" }: HeaderProps) => {
+const Header = ({ title }: HeaderProps) => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (

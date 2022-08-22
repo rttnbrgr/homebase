@@ -11,9 +11,8 @@ type ReviewProps = {};
 
 function FullstackDesign({}: ReviewProps) {
   return (
-    <Layout>
+    <Layout title="Fullstack Design">
       <MetaPage title="Fullstack Design" />
-      <Header title="Fullstack Design" />
       <Container variant="review" pb="8">
         <VStack spacing={4}>
           {projects.map((project, i) => (

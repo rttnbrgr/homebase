@@ -17,7 +17,7 @@ const typeSystem: typeSystemObject = {
 const ThemeExplorer = ({}: Props) => {
   return (
     <>
-      <Layout>
+      <Layout hideHeader title="Theme">
         <MetaPage title="T H E M E | 🤢🍔" titleSuffix={false} />
 
         <div>
