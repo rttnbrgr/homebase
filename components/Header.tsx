@@ -36,7 +36,7 @@ const Header = ({ title = "Testimonials" }: HeaderProps) => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Flex {...headerStyles}>
+    <Flex {...headerStyles} layerStyle="debug">
       <NextLink href="/" passHref>
         <ChakraLink variant="reviewButton">
           <Button>Home</Button>
