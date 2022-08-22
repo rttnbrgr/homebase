@@ -27,7 +27,7 @@ const variantReviewOutline: SystemStyleFunction = props => ({
   }
 });
 
-const buttonStyles = {
+const styles = {
   variants: {
     reviewOutline: variantReviewOutline
   },
@@ -36,4 +36,4 @@ const buttonStyles = {
   }
 };
 
-export default buttonStyles;
+export { styles };
