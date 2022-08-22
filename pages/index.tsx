@@ -1,5 +1,5 @@
 import MetaPage from "../components/MetaPage";
-import { LayoutChakra } from "../components/layouts";
+import { Layout } from "../components/Layout";
 import {
   Box,
   VStack,
@@ -23,7 +23,7 @@ type Props = {};
 
 const Index = ({}: Props) => {
   return (
-    <LayoutChakra>
+    <Layout>
       <MetaPage title="R T T N B R G R | 🤢🍔" titleSuffix={false} />
       <Container variant="refactor" {...rootStyles}>
         <VStack spacing="2em" align="start">
@@ -90,7 +90,7 @@ const Index = ({}: Props) => {
           </VStack>
         </VStack>
       </Container>
-    </LayoutChakra>
+    </Layout>
   );
 };
 

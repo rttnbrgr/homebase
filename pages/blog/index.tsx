@@ -1,6 +1,6 @@
 import Container from "../../components/blog/container";
 import MoreStories from "../../components/more-stories";
-import { LayoutChakra } from "../../components/layouts";
+import { Layout } from "../../components/layouts";
 import { getAllPosts } from "../../lib/api";
 import Post from "../../types/post";
 import Header from "../../components/blog/header";
@@ -15,13 +15,13 @@ const Blog = ({ allPosts }: Props) => {
   const morePosts = allPosts.slice(1);
   return (
     <>
-      <LayoutChakra>
+      <Layout>
         <MetaPage title="Blog" />
         <Container>
           <Header />
           {allPosts.length > 0 && <MoreStories posts={allPosts} />}
         </Container>
-      </LayoutChakra>
+      </Layout>
     </>
   );
 };

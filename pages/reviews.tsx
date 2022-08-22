@@ -3,14 +3,14 @@ import { Container, Flex, SimpleGrid, VStack } from "@chakra-ui/react";
 import reviews from "../lib/reviews";
 import { Review } from "../components/reviews";
 import Header from "../components/reviews/Header";
-import { LayoutChakra } from "../components/layouts";
+import { Layout } from "../components/Layout";
 import MetaPage from "../components/MetaPage";
 
 type ReviewsProps = {};
 
 function Reviews({}: ReviewsProps) {
   return (
-    <LayoutChakra>
+    <Layout>
       <MetaPage title="REVIEWS" />
       <Header />
       <Container variant="none" py="8" px={{ base: 0, lg: 12 }}>
@@ -30,7 +30,7 @@ function Reviews({}: ReviewsProps) {
           })}
         </SimpleGrid>
       </Container>
-    </LayoutChakra>
+    </Layout>
   );
 }
 

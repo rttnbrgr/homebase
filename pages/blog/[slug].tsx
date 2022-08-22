@@ -3,7 +3,7 @@ import ErrorPage from "next/error";
 import Container from "../../components/blog/container";
 import Header from "../../components/blog/header";
 import { PostHeader } from "../../components/post";
-import { LayoutChakra } from "../../components/layouts";
+import { Layout } from "../../components/Layout";
 import { getPostBySlug, getAllPosts } from "../../lib/api";
 import { PostTitle, PostBody } from "../../components/post";
 import Head from "next/head";
@@ -23,7 +23,7 @@ const Post = ({ post, morePosts }: Props) => {
     return <ErrorPage statusCode={404} />;
   }
   return (
-    <LayoutChakra>
+    <Layout>
       <Container>
         <Header />
         {router.isFallback ? (
@@ -48,7 +48,7 @@ const Post = ({ post, morePosts }: Props) => {
           </>
         )}
       </Container>
-    </LayoutChakra>
+    </Layout>
   );
 };
 

@@ -1,14 +1,14 @@
 import { Box, ChakraProvider } from "@chakra-ui/react";
 import React from "react";
-import Meta from "../MetaRoot";
-import theme from "../../theme";
-import Footer from "../Footer";
+import Meta from "./MetaRoot";
+import theme from "../theme";
+import Footer from "./Footer";
 
 type LayoutProps = {
   children: React.ReactNode;
 };
 
-const LayoutChakra = ({ children }: LayoutProps) => {
+const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <Meta />
@@ -22,4 +22,4 @@ const LayoutChakra = ({ children }: LayoutProps) => {
   );
 };
 
-export { LayoutChakra };
+export { Layout };
