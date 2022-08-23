@@ -1,13 +1,13 @@
-import dan from "../public/assets/reviews/dan.jpeg";
-import taylor from "../public/assets/reviews/taylor.jpeg";
-import joel from "../public/assets/reviews/joel.jpeg";
-import parker from "../public/assets/reviews/parker.jpeg";
-import parr from "../public/assets/reviews/parr.jpeg";
-import ivan from "../public/assets/reviews/ivan.jpeg";
-import duc from "../public/assets/reviews/duc.jpeg";
-import grace from "../public/assets/reviews/grace.jpeg";
-import david from "../public/assets/reviews/david.jpeg";
-import chastine from "../public/assets/reviews/chastine.jpeg";
+import dan from "../../public/assets/reviews/dan.jpeg";
+import taylor from "../../public/assets/reviews/taylor.jpeg";
+import joel from "../../public/assets/reviews/joel.jpeg";
+import parker from "../../public/assets/reviews/parker.jpeg";
+import parr from "../../public/assets/reviews/parr.jpeg";
+import ivan from "../../public/assets/reviews/ivan.jpeg";
+import duc from "../../public/assets/reviews/duc.jpeg";
+import grace from "../../public/assets/reviews/grace.jpeg";
+import david from "../../public/assets/reviews/david.jpeg";
+import chastine from "../../public/assets/reviews/chastine.jpeg";
 
 // Dan
 const danFulltext =
