@@ -38,7 +38,7 @@ const headerTextStyles: TextProps = {
 };
 
 type HeaderProps = {
-  title: string;
+  title?: string;
   isHome?: boolean;
 };
 

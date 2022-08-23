@@ -7,7 +7,7 @@ import Header from "./Header";
 
 type LayoutProps = {
   children: React.ReactNode;
-  title: string;
+  title?: string;
   hideHeader?: boolean;
   isHome?: boolean;
 };
