@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Flex, SimpleGrid, VStack } from "@chakra-ui/react";
 import reviews from "../lib/reviews";
-import { Review } from "../components/reviews";
+import { Review } from "../components/Review";
 import Header from "../components/Header";
 import { Layout } from "../components/Layout";
 import MetaPage from "../components/MetaPage";

@@ -1,7 +1,7 @@
 import React from "react";
 import { VStack, Box, Text, useStyleConfig } from "@chakra-ui/react";
 import type { SystemStyleFunction } from "@chakra-ui/theme-tools";
-import { Review } from "../../lib/reviews";
+import { Review } from "../lib/reviews";
 
 const baseStyle: SystemStyleFunction = props => {
   return {
