@@ -1,5 +1,5 @@
 import DateFormatter from "../date-formatter";
-import { PostTitle } from "./post-title";
+import { PostTitle } from "./PostTitle";
 import Author from "../../types/author";
 import { Text, VStack } from "@chakra-ui/react";
 
