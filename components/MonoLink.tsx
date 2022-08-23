@@ -47,3 +47,25 @@ const MonoLink = ({
 };
 
 export { MonoLink };
+
+const MonoLinkFork = ({
+  href,
+  isLocal = false,
+  children = "default child"
+}: MonoLinkProps) => {
+  if (!isLocal) {
+    return (
+      <NextLink href={href} passHref>
+        <ChakraLink layerStyle="resetLink">{children}</ChakraLink>
+      </NextLink>
+    );
+  } else {
+    return (
+      <ChakraLink layerStyle="resetLink" href={href}>
+        {children}
+      </ChakraLink>
+    );
+  }
+};
+
+export { MonoLinkFork };

@@ -1,4 +1,4 @@
-import { LayoutChakra } from "../components/layouts";
+import { Layout } from "../components/Layout";
 import { Stack, Text } from "@chakra-ui/react";
 import MetaPage from "../components/MetaPage";
 
@@ -17,7 +17,7 @@ const typeSystem: typeSystemObject = {
 const ThemeExplorer = ({}: Props) => {
   return (
     <>
-      <LayoutChakra>
+      <Layout title="Theme">
         <MetaPage title="T H E M E | 🤢🍔" titleSuffix={false} />
 
         <div>
@@ -32,8 +32,7 @@ const ThemeExplorer = ({}: Props) => {
                     color="white"
                     display="inline-block"
                     px="1"
-                    mb="4"
-                  >
+                    mb="4">
                     {typeGroup}
                   </Text>
                   <Stack spacing="4">
@@ -54,7 +53,7 @@ const ThemeExplorer = ({}: Props) => {
             })}
           </Stack>
         </div>
-      </LayoutChakra>
+      </Layout>
     </>
   );
 };

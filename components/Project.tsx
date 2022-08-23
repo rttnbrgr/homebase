@@ -4,7 +4,7 @@ import {
   Text,
   VStack,
   Link as ChakraLink,
-  Button,
+  Button
 } from "@chakra-ui/react";
 
 type ProjectLink = {
@@ -25,8 +25,7 @@ function Project({ title, description, links }: ProjectProps) {
         textStyle="review.text"
         p="2"
         layerStyle="reviewTheme.alt"
-        display="inline-flex"
-      >
+        display="inline-flex">
         {title}
       </Text>
       <Text textStyle="review.text">{description}</Text>

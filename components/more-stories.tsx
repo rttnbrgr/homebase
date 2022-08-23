@@ -1,5 +1,6 @@
-import PostPreview from "./post-preview";
+import { PostPreview } from "./post";
 import Post from "../types/post";
+import { Box, SimpleGrid, Text } from "@chakra-ui/react";
 
 type Props = {
   posts: Post[];
@@ -7,12 +8,13 @@ type Props = {
 
 const MoreStories = ({ posts }: Props) => {
   return (
-    <section className="max-w-2xl mx-auto">
-      <h2 className="mb-8 text-5xl md:text-7xl font-bold tracking-tighter leading-tight">
+    <Box mb="32" maxW="2xl" mx="auto">
+      <Text as="h2" textStyle={{ base: "h2", md: "h1", lg: "jumbo" }}>
         Posts
-      </h2>
-      <div className="grid grid-cols-1 gap-y-12 mb-32">
-        {posts.map((post) => (
+      </Text>
+
+      <SimpleGrid columns={1} spacingY="12" pt="4">
+        {posts.map(post => (
           <PostPreview
             key={post.slug}
             title={post.title}
@@ -23,8 +25,8 @@ const MoreStories = ({ posts }: Props) => {
             excerpt={post.excerpt}
           />
         ))}
-      </div>
-    </section>
+      </SimpleGrid>
+    </Box>
   );
 };
 

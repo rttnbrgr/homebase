@@ -1,8 +1,8 @@
 // 1. Import `extendTheme`
 import { extendTheme, ThemeConfig, TextProps } from "@chakra-ui/react";
 import { createBreakpoints, mode, Styles } from "@chakra-ui/theme-tools";
-import { styles as Review } from "../components/reviews";
-import Button from "../components/reviews/ButtonStyle";
+import { styles as Review } from "../components/Review";
+import { styles as Button } from "../components/Button";
 import {
   fonts,
   fontSizes,
@@ -24,35 +24,6 @@ const breakpoints = createBreakpoints({
   xl: "80em", // 1280
   "2xl": "90em" // 1440
 });
-
-// const fonts = {
-//   // default: '"Times New Roman", "Helvetica", sans-serif',
-//   default: '"Helvetica Neue", sans-serif',
-//   debug: "monospace"
-// };
-
-// const baseTextStyles: TextProps = {
-//   margin: 0,
-//   padding: 0,
-//   lineHeight: 1,
-//   fontFamily: fonts.default,
-//   fontWeight: 700
-// };
-
-// const rootIndexTextStyles = {
-//   fontSize: {
-//     // base: "1rem"
-//     base: "1.5rem",
-//     smedium: "2.5rem",
-//     "2xl": "3.25rem"
-//   },
-//   fontFamily: "default",
-//   color: "onBg",
-//   lineHeight: "1.2",
-//   fontWeight: 700,
-//   fontStyle: "normal",
-//   letterSpacing: "-0.7px"
-// };
 
 const styles: Styles = {
   global: props => ({
@@ -77,6 +48,9 @@ const theme = extendTheme({
     bg: "white",
     onBg: "#0f1014",
     debugColor: "blue"
+  },
+  sizes: {
+    "2xl": "42rem"
   },
   layerStyles: {
     debug: {
@@ -156,6 +130,8 @@ const theme = extendTheme({
     Link: {
       variants: {
         reviewButton: {
+          fontSize: "xs", // copied from button,
+          // fontSize: "inherit",
           textDecoration: "none",
           lineHeight: 1,
           _hover: {
@@ -166,7 +142,17 @@ const theme = extendTheme({
     },
     Review,
     Container: {
+      baseStyle: {
+        // border: "1px solid green"
+      },
       variants: {
+        refactor: {
+          // the width and padding are based on this
+          textStyle: "homeRoot",
+          px: "1.5rem",
+          maxWidth: "30em"
+          // boxShadow: "inset 0 0 0 4px green"
+        },
         reviews: {
           maxW: "500px"
         },

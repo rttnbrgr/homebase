@@ -1,4 +1,4 @@
-import { ProjectProps } from "./../components/fullstackDesign/Project";
+import { ProjectProps } from "../components/Project";
 
 const ProjectGradientPrototype: ProjectProps = {
   title: "Gradient Prototype",
@@ -7,17 +7,17 @@ const ProjectGradientPrototype: ProjectProps = {
   links: [
     {
       displayText: "Figma",
-      url: "https://www.figma.com/community/file/1112438097878878061",
+      url: "https://www.figma.com/community/file/1112438097878878061"
     },
     {
       displayText: "Codesandbox",
-      url: "https://codesandbox.io/s/github/rttnbrgr/fullstack-design",
+      url: "https://codesandbox.io/s/github/rttnbrgr/fullstack-design"
     },
     {
       displayText: "Github",
-      url: "https://github.com/rttnbrgr/fullstack-design",
-    },
-  ],
+      url: "https://github.com/rttnbrgr/fullstack-design"
+    }
+  ]
 };
 
 export const projects: ProjectProps[] = [ProjectGradientPrototype];

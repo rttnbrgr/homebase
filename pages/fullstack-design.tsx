@@ -2,18 +2,17 @@ import React from "react";
 import Head from "next/head";
 import { Container, VStack } from "@chakra-ui/react";
 import { projects } from "../lib/fullstackDesign";
-import Header from "../components/reviews/Header";
-import { LayoutChakra } from "../components/layouts/LayoutChakra";
-import { Project } from "../components/fullstackDesign/Project";
+import Header from "../components/Header";
+import { Layout } from "../components/Layout";
+import { Project } from "../components/Project";
 import MetaPage from "../components/MetaPage";
 
 type ReviewProps = {};
 
 function FullstackDesign({}: ReviewProps) {
   return (
-    <LayoutChakra>
+    <Layout title="Fullstack Design">
       <MetaPage title="Fullstack Design" />
-      <Header title="Fullstack Design" />
       <Container variant="review" pb="8">
         <VStack spacing={4}>
           {projects.map((project, i) => (
@@ -21,7 +20,7 @@ function FullstackDesign({}: ReviewProps) {
           ))}
         </VStack>
       </Container>
-    </LayoutChakra>
+    </Layout>
   );
 }
 
@@ -29,6 +28,6 @@ export default FullstackDesign;
 
 export const getStaticProps = async () => {
   return {
-    props: {},
+    props: {}
   };
 };

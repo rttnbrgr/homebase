@@ -1,5 +1,6 @@
 import { mode } from "@chakra-ui/theme-tools";
 import type { SystemStyleFunction } from "@chakra-ui/theme-tools";
+import { textStyles } from "../theme/typography";
 
 const variantReviewOutline: SystemStyleFunction = props => ({
   borderWidth: "2px",
@@ -11,12 +12,8 @@ const variantReviewOutline: SystemStyleFunction = props => ({
   px: 2,
 
   height: "2em",
-  // textStyle avatarBox + updates + padding
-  fontFamily: "default",
-  fontWeight: 700,
-  fontSize: "xs",
-  lineHeight: "1",
-  textTransform: "uppercase",
+  // textStyles key not supported
+  ...textStyles.bOutline,
   textDecoration: "none",
 
   _hover: {
@@ -27,7 +24,7 @@ const variantReviewOutline: SystemStyleFunction = props => ({
   }
 });
 
-const buttonStyles = {
+const styles = {
   variants: {
     reviewOutline: variantReviewOutline
   },
@@ -36,4 +33,4 @@ const buttonStyles = {
   }
 };
 
-export default buttonStyles;
+export { styles };

@@ -33,11 +33,17 @@ const rootIndexTextStyles = {
     "2xl": "3.25rem"
   },
   fontFamily: "default",
-  color: "onBg",
   lineHeight: "1.2",
   fontWeight: 700,
   fontStyle: "normal",
   letterSpacing: "-0.7px"
+};
+
+// reset from the text styles on the refactor container
+const resetTextStyles = {
+  fontWeight: "400",
+  fontSize: "1rem",
+  letterSpacing: "initial"
 };
 
 const headings = {
@@ -80,6 +86,13 @@ const headings = {
     fontSize: ["2xl"],
     fontWeight: "500",
     lineHeight: "2rem",
+    letterSpacing: "-0.015em"
+  },
+  // edit for the blog
+  h4Fork: {
+    fontSize: ["32px"],
+    fontWeight: "400",
+    lineHeight: "36px",
     letterSpacing: "-0.015em"
   },
 
@@ -163,6 +176,12 @@ const buttons = {
     fontSize: ["md"],
     fontWeight: "400",
     lineHeight: "1"
+  },
+  bOutline: {
+    fontWeight: 700,
+    fontSize: "xs",
+    lineHeight: "1",
+    textTransform: "uppercase"
   }
 };
 
@@ -173,7 +192,8 @@ const textStyles: SystemStyleObjectRecord = {
   ...headings,
   ...paragraphs,
   ...labels,
-  ...buttons
+  ...buttons,
+  resetRefactor: resetTextStyles
 };
 
 export { fonts, fontSizes, baseTextStyles, rootIndexTextStyles, textStyles };

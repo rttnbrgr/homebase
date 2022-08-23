@@ -1,18 +1,17 @@
 import React from "react";
 import { Container, Flex, SimpleGrid, VStack } from "@chakra-ui/react";
 import reviews from "../lib/reviews";
-import { Review } from "../components/reviews";
-import Header from "../components/reviews/Header";
-import { LayoutChakra } from "../components/layouts";
+import { Review } from "../components/Review";
+import Header from "../components/Header";
+import { Layout } from "../components/Layout";
 import MetaPage from "../components/MetaPage";
 
 type ReviewsProps = {};
 
 function Reviews({}: ReviewsProps) {
   return (
-    <LayoutChakra>
+    <Layout title="Testimonials">
       <MetaPage title="REVIEWS" />
-      <Header />
       <Container variant="none" py="8" px={{ base: 0, lg: 12 }}>
         <SimpleGrid columns={{ base: 1, lg: 2 }} spacing="12">
           {reviews.map((review, i) => {
@@ -30,7 +29,7 @@ function Reviews({}: ReviewsProps) {
           })}
         </SimpleGrid>
       </Container>
-    </LayoutChakra>
+    </Layout>
   );
 }
 
