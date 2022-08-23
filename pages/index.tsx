@@ -11,7 +11,7 @@ import NextLink from "next/link";
 import { MonoLinkList } from "../components/MonoLinkList";
 import { linkLists } from "../lib/homepageLinks";
 import { MonoLink } from "../components/MonoLink";
-import { Review } from "../components/reviews";
+import { Review } from "../components/Review";
 import reviews from "../lib/reviews";
 
 const rootStyles = {
