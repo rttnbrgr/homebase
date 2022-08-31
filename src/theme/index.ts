@@ -117,10 +117,6 @@ const theme = extendTheme({
     },
     homeRoot: {
       ...rootIndexTextStyles
-    },
-    homeHeader: {
-      display: "inline-block",
-      px: "0.25rem"
     }
   },
   components: {

@@ -1,46 +1,11 @@
-import NextLink, { LinkProps as NextLinkProps } from "next/link";
-import {
-  BoxProps,
-  Link as ChakraLink,
-  LinkProps as ChakraLinkProps,
-  ListItem,
-  Text,
-  TextProps,
-  useColorModeValue
-} from "@chakra-ui/react";
-import { mode } from "@chakra-ui/theme-tools";
-import type { SystemStyleFunction } from "@chakra-ui/theme-tools";
+import { Text, TextProps, useColorModeValue } from "@chakra-ui/react";
 
-type BoxTextProps = TextProps;
-
-/**
- * Over eager optimization
- */
-const baseStyles: SystemStyleFunction = props => ({
-  display: "inline-block",
-  // can't use mode outside of the theme
-  bg: mode("onBg", "bg")(props),
-  color: mode("onbg", "onBg")(props),
-  px: 2
-});
-
-// pre-org for moving it into a Chakra component
-const BoxTextStyles = {
-  baseStyles
-};
-
-const styles: BoxProps = {
+const styles: TextProps = {
   display: "inline-block",
   px: 2
 };
 
-// These can be overriden
-const defaults: TextProps = {
-  as: "h1",
-  textStyle: "homeHeader"
-};
-
-const BoxText = ({ children, ...textProps }: BoxTextProps) => {
+const BoxText = ({ children, ...textProps }: TextProps) => {
   const bg = useColorModeValue("onBg", "bg");
   const color = useColorModeValue("bg", "onBg");
   const colorModeStyles = {
@@ -49,7 +14,7 @@ const BoxText = ({ children, ...textProps }: BoxTextProps) => {
   };
 
   return (
-    <Text {...styles} {...defaults} {...colorModeStyles} {...textProps}>
+    <Text {...styles} {...colorModeStyles} {...textProps}>
       {children}
     </Text>
   );
