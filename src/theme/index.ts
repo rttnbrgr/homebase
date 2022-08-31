@@ -120,8 +120,6 @@ const theme = extendTheme({
     },
     homeHeader: {
       display: "inline-block",
-      background: "onBg",
-      color: "bg",
       px: "0.25rem"
     }
   },
