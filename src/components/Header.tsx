@@ -18,6 +18,7 @@ import {
 import { miscLinks, linkLists } from "../lib/homepageLinks";
 import { MonoLink, MonoLinkFork } from "./MonoLink";
 import { MonoLinkList } from "./MonoLinkList";
+import { BoxText } from "./BoxText";
 
 const headerStyles: BoxProps = {
   justifyContent: {
@@ -52,17 +53,13 @@ const Header = ({ title, isHome = false }: HeaderProps) => {
           <Flex justifyContent="space-between" alignItems="center">
             {/* Breadcrumb */}
             <HStack>
-              <Text as="h1" textStyle="homeHeader" px="2">
+              <BoxText as="h1">
                 <NextLink href="/" passHref>
-                  <ChakraLink
-                    layerStyle="resetLink"
-                    // Fix the decoration
-                    // textDecoration={{ _hover: "none" }}
-                  >
+                  <ChakraLink layerStyle="resetLink">
                     {isHome ? "@rttnbrgr" : "~"}
                   </ChakraLink>
                 </NextLink>
-              </Text>
+              </BoxText>
 
               {!isHome && (
                 <>

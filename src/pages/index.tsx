@@ -13,6 +13,7 @@ import { linkLists } from "../lib/homepageLinks";
 import { MonoLink } from "../components/MonoLink";
 import { Review } from "../components/Review";
 import reviews from "../lib/reviews";
+import { BoxText } from "../components/BoxText";
 
 const rootStyles = {
   pt: "2rem",
@@ -45,9 +46,7 @@ const Index = ({}: Props) => {
           </VStack>
           {/* Reviews Section */}
           <Box as="section">
-            <Text as="h2" textStyle="homeHeader">
-              Reviews
-            </Text>
+            <BoxText as="h2">Reviews</BoxText>
 
             <VStack spacing="8" align="start" my="8">
               {reviews.slice(0, 3).map((review, i) => {

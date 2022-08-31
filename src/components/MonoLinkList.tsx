@@ -1,4 +1,5 @@
 import { Text, UnorderedList } from "@chakra-ui/react";
+import { BoxText } from "./BoxText";
 
 type Props = {
   title: string;
@@ -8,9 +9,7 @@ type Props = {
 const MonoLinkList = ({ title, children }: Props) => {
   return (
     <UnorderedList layerStyle="resetList">
-      <Text as="h2" textStyle="homeHeader">
-        {title}
-      </Text>
+      <BoxText as="h2">{title}</BoxText>
       {children}
     </UnorderedList>
   );
