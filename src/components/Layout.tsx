@@ -17,7 +17,7 @@ const Layout = ({ children, title, hideHeader, isHome }: LayoutProps) => {
     <>
       <Meta />
       <ChakraProvider theme={theme}>
-        <Box minH="100vh" boxShadow="inset 0 0 0 4px pink">
+        <Box minH="100vh">
           {!hideHeader && <Header title={title} isHome={isHome} />}
           <main>{children}</main>
           <Footer />
