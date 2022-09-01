@@ -17,7 +17,7 @@ const Blog = ({ allPosts }: Props) => {
         <Container variant="refactor">
           <Box textStyle="resetRefactor">
             {allPosts.length > 0 && (
-              <Box mb="32" maxW="2xl" mx="auto">
+              <Container variant="singleColumn">
                 <Text as="h2" textStyle={{ base: "h2", md: "h1", lg: "jumbo" }}>
                   Posts
                 </Text>
@@ -35,7 +35,7 @@ const Blog = ({ allPosts }: Props) => {
                     />
                   ))}
                 </SimpleGrid>
-              </Box>
+              </Container>
             )}
           </Box>
         </Container>
