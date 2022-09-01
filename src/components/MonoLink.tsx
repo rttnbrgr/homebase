@@ -27,7 +27,7 @@ const MonoLink = ({
   isLocal = false,
   children = "default child"
 }: MonoLinkProps) => {
-  if (!isLocal) {
+  if (isLocal) {
     return (
       <ListItem>
         <NextLink href={href} passHref>
@@ -53,7 +53,7 @@ const MonoLinkFork = ({
   isLocal = false,
   children = "default child"
 }: MonoLinkProps) => {
-  if (!isLocal) {
+  if (isLocal) {
     return (
       <NextLink href={href} passHref>
         <ChakraLink layerStyle="resetLink">{children}</ChakraLink>
