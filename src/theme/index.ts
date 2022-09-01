@@ -1,4 +1,3 @@
-// 1. Import `extendTheme`
 import { extendTheme, ThemeConfig, TextProps } from "@chakra-ui/react";
 import { createBreakpoints, mode, Styles } from "@chakra-ui/theme-tools";
 import { styles as Review } from "../components/Review";
@@ -146,6 +145,11 @@ const theme = extendTheme({
           px: "1.5rem",
           maxWidth: "30em"
           // boxShadow: "inset 0 0 0 4px green"
+        },
+        singleColumn: {
+          maxW: "2xl",
+          mb: 32,
+          px: 0
         },
         reviews: {
           maxW: "500px"

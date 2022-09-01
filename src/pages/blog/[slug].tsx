@@ -33,11 +33,9 @@ const Post = ({ post, morePosts }: Props) => {
               </title>
               <meta property="og:image" content={post.ogImage.url} />
             </Head>
-            <Box
+            <Container
+              variant="singleColumn"
               as="article"
-              mb="32"
-              maxW="2xl"
-              mx="auto"
               textStyle="resetRefactor">
               <PostHeader
                 title={post.title}
@@ -46,7 +44,7 @@ const Post = ({ post, morePosts }: Props) => {
                 author={post.author}
               />
               <PostBody content={post.content} />
-            </Box>
+            </Container>
           </>
         )}
       </Container>
