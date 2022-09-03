@@ -26,7 +26,10 @@ const variantReviewOutline: SystemStyleFunction = props => ({
 
 const styles = {
   variants: {
-    reviewOutline: variantReviewOutline
+    reviewOutline: variantReviewOutline,
+    base: {
+      borderRadius: "none"
+    }
   },
   defaultProps: {
     variant: "reviewOutline"
