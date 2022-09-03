@@ -1,43 +1,16 @@
 import React from "react";
-import NextLink from "next/link";
 import {
   Box,
-  BoxProps,
   Text,
-  Link as ChakraLink,
   Flex,
   useColorMode,
   Button,
-  TextProps,
   Container as ChakraContainer,
-  HStack,
-  VStack,
-  UnorderedList,
-  Spacer
+  HStack
 } from "@chakra-ui/react";
-import { miscLinks, linkLists } from "../lib/homepageLinks";
-import { MonoLink, MonoLinkFork } from "./MonoLink";
-import { MonoLinkList } from "./MonoLinkList";
-import { BoxText } from "./BoxText";
+import { miscLinks } from "../lib/homepageLinks";
+import { MonoLinkFork } from "./MonoLink";
 import { Breadcrumb, BreadcrumbProps } from "./Breadcrumb";
-
-const headerStyles: BoxProps = {
-  justifyContent: {
-    base: "space-between",
-    md: "center"
-  },
-  alignItems: "center",
-  px: 4,
-  py: { base: 2, md: 4 }
-};
-
-const headerTextStyles: TextProps = {
-  // maxWidth: "500px", // repalce with thme var
-  textAlign: "center",
-  lineHeight: "1",
-  px: { base: 0, sm: 4, md: 8 },
-  textStyle: "review.header"
-};
 
 type HeaderProps = BreadcrumbProps & {};
 
@@ -79,16 +52,6 @@ const Header = ({ title, isHome = false }: HeaderProps) => {
           </Flex>
         </ChakraContainer>
       </Box>
-      {/* Old */}
-      {/* <Flex {...headerStyles} layerStyle="debug">
-        <NextLink href="/" passHref>
-          <ChakraLink variant="reviewButton">
-            <Button>Home</Button>
-          </ChakraLink>
-        </NextLink>
-        <Text {...headerTextStyles}>{title}</Text>
-        <Button onClick={toggleColorMode}>{colorMode}</Button>
-      </Flex> */}
     </>
   );
 };
