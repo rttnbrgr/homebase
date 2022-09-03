@@ -19,6 +19,7 @@ import { miscLinks, linkLists } from "../lib/homepageLinks";
 import { MonoLink, MonoLinkFork } from "./MonoLink";
 import { MonoLinkList } from "./MonoLinkList";
 import { BoxText } from "./BoxText";
+import { Breadcrumb, BreadcrumbProps } from "./Breadcrumb";
 
 const headerStyles: BoxProps = {
   justifyContent: {
@@ -38,10 +39,7 @@ const headerTextStyles: TextProps = {
   textStyle: "review.header"
 };
 
-type HeaderProps = {
-  title?: string;
-  isHome?: boolean;
-};
+type HeaderProps = BreadcrumbProps & {};
 
 const Header = ({ title, isHome = false }: HeaderProps) => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -52,22 +50,7 @@ const Header = ({ title, isHome = false }: HeaderProps) => {
         <ChakraContainer variant="refactor" py="4">
           <Flex justifyContent="space-between" alignItems="center">
             {/* Breadcrumb */}
-            <HStack>
-              <BoxText as="h1">
-                <NextLink href="/" passHref>
-                  <ChakraLink layerStyle="resetLink">
-                    {isHome ? "@rttnbrgr" : "~"}
-                  </ChakraLink>
-                </NextLink>
-              </BoxText>
-
-              {!isHome && (
-                <>
-                  <Text>/</Text>
-                  <Text>{title}</Text>
-                </>
-              )}
-            </HStack>
+            <Breadcrumb title={title} isHome={isHome} />
 
             {/* Links */}
             <HStack spacing="6" align="start">
