@@ -7,24 +7,28 @@ const miscLinks = [
   {
     href: "/blog",
     isLocal: true,
-    linkText: "Blog"
+    linkText: "Blog",
+    showInNav: true
   },
 
   {
     href: "/reviews",
     isLocal: true,
-    linkText: "Reviews"
+    linkText: "Reviews",
+    showInNav: true
   },
 
   {
     href: "/fullstack-design",
     isLocal: true,
-    linkText: "Fullstack Design"
+    linkText: "Fullstack Design",
+    showInNav: false
   },
   {
     href: "/theme",
     isLocal: true,
-    linkText: "Theme"
+    linkText: "Theme",
+    showInNav: true
   }
 ];
 
