@@ -6,7 +6,9 @@ import {
   Container as ChakraContainer,
   useDisclosure,
   VStack,
-  BoxProps
+  HStack,
+  BoxProps,
+  useColorModeValue
 } from "@chakra-ui/react";
 import { miscLinks } from "../lib/homepageLinks";
 import { MonoLinkFork } from "./MonoLink";
@@ -33,8 +35,10 @@ const MenuDrawerStyles: BoxProps = {
   pr: 24,
   pt: 2,
   pb: 8,
-  layerStyle: "debug",
-  transition: "transform .3s ease"
+  bg: "bg",
+  // layerStyle: "debug",
+  transition: "transform .3s ease",
+  display: { base: "block", sm: "none" }
 };
 
 function getMenuTransform(isOpen: boolean) {
@@ -44,15 +48,15 @@ function getMenuTransform(isOpen: boolean) {
   };
 }
 
-type NavMenuProps = {
+type NavMenuProps = BoxProps & {
   isOpen: boolean;
 };
 
-const NavMenu = ({ isOpen }: NavMenuProps) => {
+const NavMenu = ({ isOpen, ...boxProps }: NavMenuProps) => {
   const menuTransform = useMemo(() => getMenuTransform(isOpen), [isOpen]);
 
   return (
-    <Box {...MenuDrawerStyles} sx={menuTransform}>
+    <Box {...MenuDrawerStyles} {...boxProps} sx={menuTransform}>
       <VStack spacing="4" align="start">
         {miscLinks
           .filter(x => x.showInNav)
@@ -86,14 +90,21 @@ const Header = ({ title, isHome = false }: HeaderProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const menuIcon = isOpen ? <CloseIcon /> : <HamburgerIcon />;
   const menuHandler = isOpen ? onClose : onOpen;
+  // Color Mode
+  const color = useColorModeValue("onBg", "bg");
+  const bg = useColorModeValue("bg", "onBg");
+  const colorModeStyles = {
+    bg,
+    color
+  };
 
   return (
-    <>
+    <Box>
       {/* Nav Menu */}
-      <NavMenu isOpen={isOpen} />
+      <NavMenu isOpen={isOpen} {...colorModeStyles} />
 
       {/* Header */}
-      <Box as="header" layerStyle="debug" {...headerStyles}>
+      <Box as="header" layerStyle="" {...headerStyles} {...colorModeStyles}>
         <ChakraContainer variant="refactor" py="4">
           <Flex justifyContent="space-between" alignItems="center">
             {/* Breadcrumb */}
@@ -126,7 +137,7 @@ const Header = ({ title, isHome = false }: HeaderProps) => {
           </Flex>
         </ChakraContainer>
       </Box>
-    </>
+    </Box>
   );
 };
 
